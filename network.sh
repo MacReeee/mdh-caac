@@ -144,7 +144,6 @@ function createOrgs() {
     infoln "Generating certificates using cryptogen tool"
 
     infoln "Creating Org1 Identities"
-
     set -x
     cryptogen generate --config=./organizations/cryptogen/crypto-config-org1.yaml --output="organizations"
     res=$?
@@ -154,7 +153,6 @@ function createOrgs() {
     fi
 
     infoln "Creating Org2 Identities"
-
     set -x
     cryptogen generate --config=./organizations/cryptogen/crypto-config-org2.yaml --output="organizations"
     res=$?
@@ -163,8 +161,46 @@ function createOrgs() {
       fatalln "Failed to generate certificates..."
     fi
 
-    infoln "Creating Orderer Org Identities"
+    # 添加Org3的证书生成
+    infoln "Creating Org3 Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-org3.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
 
+    # 添加Org4的证书生成
+    infoln "Creating Org4 Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-org4.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
+
+    # 添加GatewayOrg的证书生成
+    infoln "Creating Gateway1 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway1.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
+
+    infoln "Creating Gateway2 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway2.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
+
+    infoln "Creating Orderer Org Identities"
     set -x
     cryptogen generate --config=./organizations/cryptogen/crypto-config-orderer.yaml --output="organizations"
     res=$?
@@ -172,7 +208,6 @@ function createOrgs() {
     if [ $res -ne 0 ]; then
       fatalln "Failed to generate certificates..."
     fi
-
   fi
 
   # Create crypto material using Fabric CA
@@ -206,7 +241,7 @@ function createOrgs() {
 
   fi
 
-  infoln "Generating CCP files for Org1 and Org2"
+  infoln "Generating CCP files for 所有组织"
   ./organizations/ccp-generate.sh
 }
 
@@ -315,9 +350,9 @@ function deployCC() {
 
 # Tear down running network
 function networkDown() {
-  # stop org3 containers also in addition to org1 and org2, in case we were running sample to add org3
+  # stop all containers
   docker-compose -f $COMPOSE_FILE_BASE -f $COMPOSE_FILE_COUCH -f $COMPOSE_FILE_CA down --volumes --remove-orphans
-  docker-compose -f $COMPOSE_FILE_COUCH_ORG3 -f $COMPOSE_FILE_ORG3 down --volumes --remove-orphans
+  
   # Don't remove the generated artifacts -- note, the ledgers are always removed
   if [ "$MODE" != "restart" ]; then
     # Bring down the network, deleting the volumes
@@ -325,15 +360,23 @@ function networkDown() {
     clearContainers
     #Cleanup images
     removeUnwantedImages
+    
     # remove orderer block and other channel configuration transactions and certs
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf system-genesis-block/*.block organizations/peerOrganizations organizations/ordererOrganizations'
+    
     ## remove fabric ca artifacts
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/org1/msp organizations/fabric-ca/org1/tls-cert.pem organizations/fabric-ca/org1/ca-cert.pem organizations/fabric-ca/org1/IssuerPublicKey organizations/fabric-ca/org1/IssuerRevocationPublicKey organizations/fabric-ca/org1/fabric-ca-server.db'
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/org2/msp organizations/fabric-ca/org2/tls-cert.pem organizations/fabric-ca/org2/ca-cert.pem organizations/fabric-ca/org2/IssuerPublicKey organizations/fabric-ca/org2/IssuerRevocationPublicKey organizations/fabric-ca/org2/fabric-ca-server.db'
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/org3/msp organizations/fabric-ca/org3/tls-cert.pem organizations/fabric-ca/org3/ca-cert.pem organizations/fabric-ca/org3/IssuerPublicKey organizations/fabric-ca/org3/IssuerRevocationPublicKey organizations/fabric-ca/org3/fabric-ca-server.db'
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/org4/msp organizations/fabric-ca/org4/tls-cert.pem organizations/fabric-ca/org4/ca-cert.pem organizations/fabric-ca/org4/IssuerPublicKey organizations/fabric-ca/org4/IssuerRevocationPublicKey organizations/fabric-ca/org4/fabric-ca-server.db'
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/gateway/msp organizations/fabric-ca/gateway/tls-cert.pem organizations/fabric-ca/gateway/ca-cert.pem organizations/fabric-ca/gateway/IssuerPublicKey organizations/fabric-ca/gateway/IssuerRevocationPublicKey organizations/fabric-ca/gateway/fabric-ca-server.db'
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/ordererOrg/msp organizations/fabric-ca/ordererOrg/tls-cert.pem organizations/fabric-ca/ordererOrg/ca-cert.pem organizations/fabric-ca/ordererOrg/IssuerPublicKey organizations/fabric-ca/ordererOrg/IssuerRevocationPublicKey organizations/fabric-ca/ordererOrg/fabric-ca-server.db'
-    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf addOrg3/fabric-ca/org3/msp addOrg3/fabric-ca/org3/tls-cert.pem addOrg3/fabric-ca/org3/ca-cert.pem addOrg3/fabric-ca/org3/IssuerPublicKey addOrg3/fabric-ca/org3/IssuerRevocationPublicKey addOrg3/fabric-ca/org3/fabric-ca-server.db'
+    
     # remove channel and script artifacts
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf channel-artifacts log.txt *.tar.gz'
+
+    # 删除所有通道的区块文件
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -f channel-artifacts/gatewaychannel.block channel-artifacts/domain1channel.block channel-artifacts/domain2channel.block'
   fi
 }
 

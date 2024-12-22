@@ -128,7 +128,15 @@ installChaincode() {
   res=$?
   { set +x; } 2>/dev/null
   cat log.txt
-  verifyResult $res "Chaincode installation on peer0.org${ORG} has failed"
+  if [ $res -ne 0 ]; then
+    # 检查是否是"已安装"的错误
+    if grep -q "chaincode already successfully installed" log.txt; then
+      successln "Chaincode already installed on peer0.org${ORG}"
+      return 0
+    else
+      fatalln "Chaincode installation on peer0.org${ORG} has failed"
+    fi
+  fi
   successln "Chaincode is installed on peer0.org${ORG}"
 }
 
@@ -200,7 +208,31 @@ commitChaincodeDefinition() {
   # peer (if join was successful), let's supply it directly as we know
   # it using the "-o" option
   set -x
-  peer lifecycle chaincode commit -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile $ORDERER_CA --channelID $CHANNEL_NAME --name ${CC_NAME} $PEER_CONN_PARMS --version ${CC_VERSION} --sequence ${CC_SEQUENCE} ${INIT_REQUIRED} ${CC_END_POLICY} ${CC_COLL_CONFIG} >&log.txt
+  # 修复版本：将所有参数正确排序，确保每个 --tlsRootCertFiles 后面跟着对应的证书路径
+  # commitChaincodeDefinition 改为基于通道选择背书节点
+  if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
+      peer lifecycle chaincode commit -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls \
+          --cafile $ORDERER_CA --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${CC_VERSION} --sequence ${CC_SEQUENCE} \
+          --peerAddresses localhost:7151 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway1.example.com/peers/peer0.gateway1.example.com/tls/ca.crt \
+          --peerAddresses localhost:7251 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway2.example.com/peers/peer0.gateway2.example.com/tls/ca.crt \
+          ${INIT_REQUIRED} ${CC_END_POLICY} ${CC_COLL_CONFIG}
+
+  elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
+      peer lifecycle chaincode commit -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls \
+          --cafile $ORDERER_CA --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${CC_VERSION} --sequence ${CC_SEQUENCE} \
+          --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
+          --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt \
+          --peerAddresses localhost:7151 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway1.example.com/peers/peer0.gateway1.example.com/tls/ca.crt \
+          ${INIT_REQUIRED} ${CC_END_POLICY} ${CC_COLL_CONFIG}
+
+elif [ "$CHANNEL_NAME" == "domain2channel" ]; then
+      peer lifecycle chaincode commit -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls \
+          --cafile $ORDERER_CA --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${CC_VERSION} --sequence ${CC_SEQUENCE} \
+          --peerAddresses localhost:11051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls/ca.crt \
+          --peerAddresses localhost:13051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/tls/ca.crt \
+          --peerAddresses localhost:7251 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway2.example.com/peers/peer0.gateway2.example.com/tls/ca.crt \
+          ${INIT_REQUIRED} ${CC_END_POLICY} ${CC_COLL_CONFIG}
+  fi
   res=$?
   { set +x; } 2>/dev/null
   cat log.txt
@@ -282,47 +314,94 @@ chaincodeQuery() {
   fi
 }
 
+
 ## package the chaincode
 packageChaincode
 
-## Install chaincode on peer0.org1 and peer0.org2
-infoln "Installing chaincode on peer0.org1..."
-installChaincode 1
-infoln "Install chaincode on peer0.org2..."
-installChaincode 2
+## Install chaincode on peers based on channel
+if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
+    infoln "Installing chaincode on gateway1 peer..."
+    installChaincode 5
+    infoln "Installing chaincode on gateway2 peer..."
+    installChaincode 6
+    
+    queryInstalled 5
+    
+    approveForMyOrg 5
+    approveForMyOrg 6
+    
+    checkCommitReadiness 5 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true"
+    checkCommitReadiness 6 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true"
+    
+    commitChaincodeDefinition 5 6
+
+elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
+    infoln "Installing chaincode on org1 peer..."
+    installChaincode 1
+    infoln "Install chaincode on org2 peer..."
+    installChaincode 2
+    infoln "Install chaincode on gateway peer..."
+    installChaincode 5
+
+    queryInstalled 1
+
+    approveForMyOrg 1
+    approveForMyOrg 2
+    approveForMyOrg 5
+
+    checkCommitReadiness 1 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Gateway1OrgMSP\": true"
+    checkCommitReadiness 2 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Gateway1OrgMSP\": true"
+    checkCommitReadiness 5 "\"Org1MSP\": true" "\"Org2MSP\": true" "\"Gateway1OrgMSP\": true"
+
+    commitChaincodeDefinition 1 2 5
+
+elif [ "$CHANNEL_NAME" == "domain2channel" ]; then
+    infoln "Installing chaincode on org3 peer..."
+    installChaincode 3
+    infoln "Install chaincode on org4 peer..."
+    installChaincode 4
+    infoln "Install chaincode on gateway peer..."
+    installChaincode 6
+
+    queryInstalled 3
+
+    approveForMyOrg 3
+    approveForMyOrg 4
+    approveForMyOrg 6
+
+    checkCommitReadiness 3 "\"Org3MSP\": true" "\"Org4MSP\": true" "\"Gateway2OrgMSP\": true"
+    checkCommitReadiness 4 "\"Org3MSP\": true" "\"Org4MSP\": true" "\"Gateway2OrgMSP\": true"
+    checkCommitReadiness 6 "\"Org3MSP\": true" "\"Org4MSP\": true" "\"Gateway2OrgMSP\": true"
+
+    commitChaincodeDefinition 3 4 6
+else
+    errorln "Unknown channel name: ${CHANNEL_NAME}"
+    exit 1
+fi
 
 ## query whether the chaincode is installed
-queryInstalled 1
+if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
+    queryCommitted 5  # 使用 GatewayOrg 查询
+elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
+    queryCommitted 1  # 使用 Org1 查询
+elif [ "$CHANNEL_NAME" == "domain2channel" ]; then
+    queryCommitted 3  # 使用 Org3 查询
+else
+    errorln "Unknown channel name: ${CHANNEL_NAME}"
+    exit 1
+fi
 
-## approve the definition for org1
-approveForMyOrg 1
-
-## check whether the chaincode definition is ready to be committed
-## expect org1 to have approved and org2 not to
-checkCommitReadiness 1 "\"Org1MSP\": true" "\"Org2MSP\": false"
-checkCommitReadiness 2 "\"Org1MSP\": true" "\"Org2MSP\": false"
-
-## now approve also for org2
-approveForMyOrg 2
-
-## check whether the chaincode definition is ready to be committed
-## expect them both to have approved
-checkCommitReadiness 1 "\"Org1MSP\": true" "\"Org2MSP\": true"
-checkCommitReadiness 2 "\"Org1MSP\": true" "\"Org2MSP\": true"
-
-## now that we know for sure both orgs have approved, commit the definition
-commitChaincodeDefinition 1 2
-
-## query on both orgs to see that the definition committed successfully
-queryCommitted 1
-queryCommitted 2
-
-## Invoke the chaincode - this does require that the chaincode have the 'initLedger'
-## method defined
+## Invoke the chaincode if required
 if [ "$CC_INIT_FCN" = "NA" ]; then
   infoln "Chaincode initialization is not required"
 else
-  chaincodeInvokeInit 1 2
+  if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
+    chaincodeInvokeInit 5
+  elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
+    chaincodeInvokeInit 1 2 5
+  elif [ "$CHANNEL_NAME" == "domain2channel" ]; then
+    chaincodeInvokeInit 3 4 5
+  fi
 fi
 
 exit 0

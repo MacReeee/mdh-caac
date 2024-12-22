@@ -1,11 +1,4 @@
 #!/bin/bash
-#
-# Copyright IBM Corp All Rights Reserved
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
-# This is a collection of bash functions used by different scripts
 
 # imports
 . scripts/utils.sh
@@ -15,6 +8,10 @@ export ORDERER_CA=${PWD}/organizations/ordererOrganizations/example.com/orderers
 export PEER0_ORG1_CA=${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
 export PEER0_ORG2_CA=${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 export PEER0_ORG3_CA=${PWD}/organizations/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls/ca.crt
+export PEER0_ORG4_CA=${PWD}/organizations/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/tls/ca.crt
+export PEER0_GATEWAY1_CA=${PWD}/organizations/peerOrganizations/gateway1.example.com/peers/peer0.gateway1.example.com/tls/ca.crt
+export PEER0_GATEWAY2_CA=${PWD}/organizations/peerOrganizations/gateway2.example.com/peers/peer0.gateway2.example.com/tls/ca.crt
+
 
 # Set environment variables for the peer org
 setGlobals() {
@@ -35,12 +32,26 @@ setGlobals() {
     export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG2_CA
     export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
     export CORE_PEER_ADDRESS=localhost:9051
-
   elif [ $USING_ORG -eq 3 ]; then
     export CORE_PEER_LOCALMSPID="Org3MSP"
     export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG3_CA
     export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp
     export CORE_PEER_ADDRESS=localhost:11051
+  elif [ $USING_ORG -eq 4 ]; then
+    export CORE_PEER_LOCALMSPID="Org4MSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG4_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org4.example.com/users/Admin@org4.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:13051
+  elif [ $USING_ORG -eq 5 ]; then # Gateway1Org 使用数字5
+    export CORE_PEER_LOCALMSPID="Gateway1OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY1_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway1.example.com/users/Admin@gateway1.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:7151
+  elif [ $USING_ORG -eq 6 ]; then # Gateway2Org 使用数字6
+    export CORE_PEER_LOCALMSPID="Gateway2OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY2_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway2.example.com/users/Admin@gateway2.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:7251
   else
     errorln "ORG Unknown"
   fi
@@ -66,6 +77,12 @@ setGlobalsCLI() {
     export CORE_PEER_ADDRESS=peer0.org2.example.com:9051
   elif [ $USING_ORG -eq 3 ]; then
     export CORE_PEER_ADDRESS=peer0.org3.example.com:11051
+  elif [ $USING_ORG -eq 4 ]; then
+    export CORE_PEER_ADDRESS=peer0.org4.example.com:13051
+  elif [ $USING_ORG -eq 5 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway1.example.com:7151
+  elif [ $USING_ORG -eq 6 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway2.example.com:7251
   else
     errorln "ORG Unknown"
   fi

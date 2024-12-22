@@ -154,3 +154,5 @@ export -f errorln
 export -f successln
 export -f infoln
 export -f warnln
+export -f fatalln
+export -f println  # 添加这行

@@ -106,6 +106,78 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Org2MSP.peer')"
 
+    - &org3
+        Name: Org3MSP
+        ID: Org3MSP
+        MSPDir: ../organizations/peerOrganizations/org3.example.com/msp
+        policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Org3MSP.admin', 'Org3MSP.peer', 'Org3MSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Org3MSP.admin', 'Org3MSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Org3MSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Org3MSP.peer')"
+
+    - &org4
+        Name: Org4MSP
+        ID: Org4MSP
+        MSPDir: ../organizations/peerOrganizations/org4.example.com/msp
+        policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Org4MSP.admin', 'Org4MSP.peer', 'Org4MSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Org4MSP.admin', 'Org4MSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Org4MSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Org4MSP.peer')"
+
+    - &Gateway1Org
+        Name: Gateway1OrgMSP
+        ID: Gateway1OrgMSP
+        MSPDir: ../organizations/peerOrganizations/gateway1.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Gateway1OrgMSP.admin', 'Gateway1OrgMSP.peer', 'Gateway1OrgMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Gateway1OrgMSP.admin', 'Gateway1OrgMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Gateway1OrgMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Gateway1OrgMSP.peer')"
+
+    - &Gateway2Org
+        Name: Gateway2OrgMSP
+        ID: Gateway2OrgMSP
+        MSPDir: ../organizations/peerOrganizations/gateway2.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Gateway2OrgMSP.admin', 'Gateway2OrgMSP.peer', 'Gateway2OrgMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Gateway2OrgMSP.admin', 'Gateway2OrgMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Gateway2OrgMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Gateway2OrgMSP.peer')"
+
 ################################################################################
 #
 #   SECTION: Capabilities
@@ -329,7 +401,25 @@ Profiles:
                 Organizations:
                     - *Org1
                     - *Org2
-    TwoOrgsChannel:
+                    - *org3
+                    - *org4
+                    - *Gateway1Org
+                    - *Gateway2Org
+
+    # 网关组织的全局channel
+    gatewaychannel:
+        Consortium: SampleConsortium
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Gateway1Org    # 只有网关组织参与
+                - *Gateway2Org
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    # 域1的channel
+    domain1channel:
         Consortium: SampleConsortium
         <<: *ChannelDefaults
         Application:
@@ -337,5 +427,19 @@ Profiles:
             Organizations:
                 - *Org1
                 - *Org2
+                - *Gateway1Org
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    # 域2的channel
+    domain2channel:
+        Consortium: SampleConsortium
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *org3
+                - *org4
+                - *Gateway2Org
             Capabilities:
                 <<: *ApplicationCapabilities

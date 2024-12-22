@@ -9,6 +9,10 @@ volumes:
   orderer.example.com:
   peer0.org1.example.com:
   peer0.org2.example.com:
+  peer0.org3.example.com:    # 新增
+  peer0.org4.example.com:    # 新增
+  peer0.gateway1.example.com: # 新增
+  peer0.gateway2.example.com: # 新增
 
 networks:
   test:
@@ -51,6 +55,7 @@ services:
     networks:
       - test
 
+  # org1的peer0
   peer0.org1.example.com:
     container_name: peer0.org1.example.com
     image: hyperledger/fabric-peer:latest
@@ -88,6 +93,7 @@ services:
     networks:
       - test
 
+  # org2的peer0
   peer0.org2.example.com:
     container_name: peer0.org2.example.com
     image: hyperledger/fabric-peer:latest
@@ -125,6 +131,146 @@ services:
     networks:
       - test
 
+  # org3的peer0
+  peer0.org3.example.com:
+    container_name: peer0.org3.example.com
+    image: hyperledger/fabric-peer:latest
+    environment:
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=fabric_test
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_PROFILE_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_PEER_ID=peer0.org3.example.com
+      - CORE_PEER_ADDRESS=peer0.org3.example.com:11051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:11051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org3.example.com:11052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:11052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org3.example.com:11051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org3.example.com:11051
+      - CORE_PEER_LOCALMSPID=Org3MSP
+      - CORE_OPERATIONS_LISTENADDRESS=peer0.org3.example.com:9446
+    volumes:
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ../organizations/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/msp:/etc/hyperledger/fabric/msp
+      - ../organizations/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls:/etc/hyperledger/fabric/tls
+      - peer0.org3.example.com:/var/hyperledger/production
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: peer node start
+    ports:
+      - 11051:11051
+      - 9446:9446
+    networks:
+      - test
+
+  # prg4的peer0
+  peer0.org4.example.com:
+    container_name: peer0.org4.example.com
+    image: hyperledger/fabric-peer:latest
+    environment:
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=fabric_test
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_PROFILE_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_PEER_ID=peer0.org4.example.com
+      - CORE_PEER_ADDRESS=peer0.org4.example.com:13051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:13051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org4.example.com:13052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:13052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org4.example.com:13051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org4.example.com:13051
+      - CORE_PEER_LOCALMSPID=Org4MSP
+      - CORE_OPERATIONS_LISTENADDRESS=peer0.org4.example.com:9447
+    volumes:
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ../organizations/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/msp:/etc/hyperledger/fabric/msp
+      - ../organizations/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/tls:/etc/hyperledger/fabric/tls
+      - peer0.org4.example.com:/var/hyperledger/production
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: peer node start
+    ports:
+      - 13051:13051
+      - 9447:9447
+    networks:
+      - test
+
+  # 网关1的peer0
+  peer0.gateway1.example.com:
+    container_name: peer0.gateway1.example.com
+    image: hyperledger/fabric-peer:latest
+    environment:
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=fabric_test
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_PROFILE_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_PEER_ID=peer0.gateway1.example.com
+      - CORE_PEER_ADDRESS=peer0.gateway1.example.com:7151
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:7151
+      - CORE_PEER_CHAINCODEADDRESS=peer0.gateway1.example.com:7152
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7152
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.gateway1.example.com:7151
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.gateway1.example.com:7151
+      - CORE_PEER_LOCALMSPID=Gateway1OrgMSP
+      - CORE_OPERATIONS_LISTENADDRESS=peer0.gateway1.example.com:9448
+    volumes:
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ../organizations/peerOrganizations/gateway1.example.com/peers/peer0.gateway1.example.com/msp:/etc/hyperledger/fabric/msp
+      - ../organizations/peerOrganizations/gateway1.example.com/peers/peer0.gateway1.example.com/tls:/etc/hyperledger/fabric/tls
+      - peer0.gateway1.example.com:/var/hyperledger/production
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: peer node start
+    ports:
+      - 7151:7151
+      - 9448:9448
+    networks:
+      - test
+
+  # 网关2的peer0
+  peer0.gateway2.example.com:
+    container_name: peer0.gateway2.example.com
+    image: hyperledger/fabric-peer:latest
+    environment:
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=fabric_test
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_PROFILE_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_PEER_ID=peer0.gateway2.example.com
+      - CORE_PEER_ADDRESS=peer0.gateway2.example.com:7251
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:7251
+      - CORE_PEER_CHAINCODEADDRESS=peer0.gateway2.example.com:7252
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7252
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.gateway2.example.com:7251
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.gateway2.example.com:7251
+      - CORE_PEER_LOCALMSPID=Gateway2OrgMSP
+      - CORE_OPERATIONS_LISTENADDRESS=peer0.gateway2.example.com:9449
+    volumes:
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ../organizations/peerOrganizations/gateway2.example.com/peers/peer0.gateway2.example.com/msp:/etc/hyperledger/fabric/msp
+      - ../organizations/peerOrganizations/gateway2.example.com/peers/peer0.gateway2.example.com/tls:/etc/hyperledger/fabric/tls
+      - peer0.gateway2.example.com:/var/hyperledger/production
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: peer node start
+    ports:
+      - 7251:7251
+      - 9449:9449
+    networks:
+      - test
+
   cli:
     container_name: cli
     image: hyperledger/fabric-tools:latest
@@ -144,5 +290,9 @@ services:
     depends_on:
       - peer0.org1.example.com
       - peer0.org2.example.com
+      - peer0.org3.example.com
+      - peer0.org4.example.com
+      - peer0.gateway1.example.com
+      - peer0.gateway2.example.com
     networks:
       - test

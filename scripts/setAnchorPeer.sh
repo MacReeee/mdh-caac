@@ -1,14 +1,8 @@
 #!/bin/bash
-#
-# Copyright IBM Corp. All Rights Reserved.
-#
-# SPDX-License-Identifier: Apache-2.0
-#
 
 # import utils
 . scripts/envVar.sh
 . scripts/configUpdate.sh
-
 
 # NOTE: this must be run in a CLI container since it requires jq and configtxlator 
 createAnchorPeerUpdate() {
@@ -26,6 +20,15 @@ createAnchorPeerUpdate() {
   elif [ $ORG -eq 3 ]; then
     HOST="peer0.org3.example.com"
     PORT=11051
+  elif [ $ORG -eq 4 ]; then
+    HOST="peer0.org4.example.com"
+    PORT=13051
+  elif [ $ORG -eq 5 ]; then
+      HOST="peer0.gateway1.example.com"
+      PORT=7151
+  elif [ $ORG -eq 6 ]; then
+      HOST="peer0.gateway2.example.com"
+      PORT=7251
   else
     errorln "Org${ORG} unknown"
   fi
@@ -55,4 +58,4 @@ setGlobalsCLI $ORG
 
 createAnchorPeerUpdate 
 
-updateAnchorPeer 
+updateAnchorPeer
