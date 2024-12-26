@@ -1,5 +1,7 @@
 package contracts
 
+import "math"
+
 // 上下文约束
 type ContextConstraints struct {
 	HistoricConstraints HistoricConstraints `json:"historic_constraints"`
@@ -17,29 +19,31 @@ func (ac *AccessControlContract) verifyHistoricConstraints(constraints HistoricC
 }
 
 type TimeConstraints struct {
-	StartTime string `json:"start_time"`
-	EndTime   string `json:"end_time"`
+	StartTime int64 `json:"start_time"`
+	EndTime   int64 `json:"end_time"`
 }
 
-func (ac *AccessControlContract) verifyTimeConstraints(constraints TimeConstraints, time string) bool {
-	// TODO: implement
+func (ac *AccessControlContract) verifyTimeConstraints(constraints TimeConstraints, time int64) bool {
+	if time < constraints.StartTime || time > constraints.EndTime {
+		return false
+	}
 	return true
 }
 
 type LocationConstraints struct {
-	Latitude  float64 `json:"latitude"`
-	Longitude float64 `json:"longitude"`
-	Radius    float64 `json:"radius"` // 米为单位
+	XCoordinate float64 `json:"x_coordinate"`
+	YCoordinate float64 `json:"y_coordinate"`
+	Radius      float64 `json:"radius"` // 米为单位
 }
 
 func (ac *AccessControlContract) verifyLocationConstraints(constraints LocationConstraints, location LocationInfo) bool {
-	// TODO: implement
-	return true
+	distance := math.Sqrt(math.Pow(location.XCoordinate-constraints.XCoordinate, 2) + math.Pow(location.YCoordinate-constraints.YCoordinate, 2))
+	return distance <= constraints.Radius
 }
 
 type LocationInfo struct {
-	Latitude  float64 `json:"latitude"`
-	Longitude float64 `json:"longitude"`
+	XCoordinate float64 `json:"x_coordinate"`
+	YCoordinate float64 `json:"y_coordinate"`
 }
 
 func (ac *AccessControlContract) verifyContextConstraints(constraints ContextConstraints, request AccessRequest) bool {

@@ -4,4 +4,4 @@
 
 ./network.sh createChannel -c gatewaychannel
 ./network.sh createChannel -c domain1channel
-./network.sh createChannel -c domain2channel./net
+./network.sh createChannel -c domain2channel
