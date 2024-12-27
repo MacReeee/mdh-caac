@@ -150,27 +150,36 @@ func (ac *AccessControlContract) RegisterResource(ctx contractapi.TransactionCon
 	// 获取并验证调用者身份
 	owner, err := ac.getCallerIdentity(ctx)
 	if err != nil {
+		fmt.Printf("获取调用者身份失败: %v\n", err)
 		return fmt.Errorf("获取调用者身份失败: %v", err)
 	}
+	fmt.Printf("Resource registration initiated by: %v\n", owner)
 
 	// 解析资源JSON
 	var resource Resource
 	if err := json.Unmarshal([]byte(resourceJSON), &resource); err != nil {
+		fmt.Printf("解析资源JSON失败: %v\n", err)
 		return fmt.Errorf("解析资源JSON失败: %v", err)
 	}
+	fmt.Printf("Resource parsed: %+v\n", resource)
 
 	// 验证资源ID不能为空
 	if resource.ID == "" {
 		return fmt.Errorf("资源ID不能为空")
 	}
 
-	// 检查资源是否已存在
+	// 创建资源键
 	resourceKey, err := ctx.GetStub().CreateCompositeKey("resource", []string{resource.ID})
 	if err != nil {
+		fmt.Printf("创建资源键失败: %v\n", err)
 		return err
 	}
+	fmt.Printf("Resource key created: %s\n", resourceKey)
+
+	// 检查资源是否已存在
 	existing, err := ctx.GetStub().GetState(resourceKey)
 	if err != nil {
+		fmt.Printf("检查资源存在性失败: %v\n", err)
 		return err
 	}
 	if existing != nil {
@@ -185,10 +194,14 @@ func (ac *AccessControlContract) RegisterResource(ctx contractapi.TransactionCon
 	// 存储资源
 	resourceBytes, err := json.Marshal(resource)
 	if err != nil {
+		fmt.Printf("序列化资源失败: %v\n", err)
 		return err
 	}
 	if err := ctx.GetStub().PutState(resourceKey, resourceBytes); err != nil {
+		fmt.Printf("存储资源失败: %v\n", err)
 		return err
 	}
+	fmt.Printf("Resource successfully registered: %s\n", resource.ID)
+
 	return nil
 }

@@ -145,48 +145,48 @@ func (ac *AccessControlContract) recordAccessResult(ctx contractapi.TransactionC
 
 // 获取访问历史
 func (ac *AccessControlContract) getAccessHistoryByIdentity(ctx contractapi.TransactionContextInterface,
-    caller, resourceProvider Identity, startTime, endTime int64) ([]AccessResult, error) {
-    
-    // 创建开始键(包含startTime)
-    startKey, err := ctx.GetStub().CreateCompositeKey(accessResultObjectType, []string{
-        resourceProvider.Address,
-        caller.Address,
-        fmt.Sprintf("%d", startTime),
-    })
-    if err != nil {
-        return nil, fmt.Errorf("failed to create start key: %v", err)
-    }
-    
-    // 创建结束键(包含endTime)
-    endKey, err := ctx.GetStub().CreateCompositeKey(accessResultObjectType, []string{
-        resourceProvider.Address,
-        caller.Address,
-        fmt.Sprintf("%d", endTime+1), // +1确保包含endTime的记录
-    })
-    if err != nil {
-        return nil, fmt.Errorf("failed to create end key: %v", err)
-    }
+	caller, resourceProvider Identity, startTime, endTime int64) ([]AccessResult, error) {
 
-    // 使用 GetStateByRange 进行范围查询
-    iterator, err := ctx.GetStub().GetStateByRange(startKey, endKey)
-    if err != nil {
-        return nil, fmt.Errorf("failed to get access history: %v", err)
-    }
-    defer iterator.Close()
+	// 创建开始键(包含startTime)
+	startKey, err := ctx.GetStub().CreateCompositeKey(accessResultObjectType, []string{
+		resourceProvider.Address,
+		caller.Address,
+		fmt.Sprintf("%d", startTime),
+	})
+	if err != nil {
+		return nil, fmt.Errorf("failed to create start key: %v", err)
+	}
 
-    var results []AccessResult
-    for iterator.HasNext() {
-        queryResult, err := iterator.Next()
-        if err != nil {
-            return nil, fmt.Errorf("failed to get next result: %v", err)
-        }
+	// 创建结束键(包含endTime)
+	endKey, err := ctx.GetStub().CreateCompositeKey(accessResultObjectType, []string{
+		resourceProvider.Address,
+		caller.Address,
+		fmt.Sprintf("%d", endTime+1), // +1确保包含endTime的记录
+	})
+	if err != nil {
+		return nil, fmt.Errorf("failed to create end key: %v", err)
+	}
 
-        var result AccessResult
-        if err := json.Unmarshal(queryResult.Value, &result); err != nil {
-            return nil, fmt.Errorf("failed to unmarshal access result: %v", err)
-        }
-        results = append(results, result)
-    }
+	// 使用 GetStateByRange 进行范围查询
+	iterator, err := ctx.GetStub().GetStateByRange(startKey, endKey)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get access history: %v", err)
+	}
+	defer iterator.Close()
 
-    return results, nil
+	var results []AccessResult
+	for iterator.HasNext() {
+		queryResult, err := iterator.Next()
+		if err != nil {
+			return nil, fmt.Errorf("failed to get next result: %v", err)
+		}
+
+		var result AccessResult
+		if err := json.Unmarshal(queryResult.Value, &result); err != nil {
+			return nil, fmt.Errorf("failed to unmarshal access result: %v", err)
+		}
+		results = append(results, result)
+	}
+
+	return results, nil
 }

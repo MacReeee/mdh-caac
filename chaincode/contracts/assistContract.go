@@ -7,6 +7,28 @@ import (
 	"github.com/hyperledger/fabric-contract-api-go/contractapi"
 )
 
+func (ac *AccessControlContract) GetResource(ctx contractapi.TransactionContextInterface, resourceID string) (*Resource, error) {
+	resourceKey, err := ctx.GetStub().CreateCompositeKey("resource", []string{resourceID})
+	if err != nil {
+		return nil, fmt.Errorf("failed to create resource key: %v", err)
+	}
+
+	resourceBytes, err := ctx.GetStub().GetState(resourceKey)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get resource: %v", err)
+	}
+	if resourceBytes == nil {
+		return nil, fmt.Errorf("resource not found: %s", resourceID)
+	}
+
+	var resource Resource
+	if err := json.Unmarshal(resourceBytes, &resource); err != nil {
+		return nil, fmt.Errorf("failed to unmarshal resource: %v", err)
+	}
+
+	return &resource, nil
+}
+
 // 资源注销
 func (ac *AccessControlContract) UnregisterResource(ctx contractapi.TransactionContextInterface, resourceID string) error {
 	// 获取并验证调用者身份
@@ -46,81 +68,78 @@ func (ac *AccessControlContract) UnregisterResource(ctx contractapi.TransactionC
 // func (ac *AccessControlContract) GetRule(ctx contractapi.TransactionContextInterface, ruleID string) (string, error)
 
 // 添加授权部署者
-func (ac *AccessControlContract) AddAuthorizedDeployer(ctx contractapi.TransactionContextInterface, deployerJSON string) error {
-	// 获取调用者身份
-	invoker, err := ac.getCallerIdentity(ctx)
-	if err != nil {
-		return fmt.Errorf("调用者身份验证失败: %v", err)
-	}
+// func (ac *AccessControlContract) AddAuthorizedDeployer(ctx contractapi.TransactionContextInterface, deployerJSON string) error {
+// 	// 获取调用者身份
+// 	invoker, err := ac.getCallerIdentity(ctx)
+// 	if err != nil {
+// 		return fmt.Errorf("调用者身份验证失败: %v", err)
+// 	}
 
-	// 验证调用者权限
-	if isAuth, err := ac.isAuthorizedDeployer(ctx, invoker); !isAuth {
-		if err != nil {
-			return fmt.Errorf("部署者验证失败: %v", err)
-		}
-		return fmt.Errorf("不是合法部署者: %s", invoker)
-	}
+// 	// 验证调用者权限
+// 	if isAuth, err := ac.isAuthorizedDeployer(ctx, invoker); !isAuth {
+// 		if err != nil {
+// 			return fmt.Errorf("部署者验证失败: %v", err)
+// 		}
+// 		return fmt.Errorf("不是合法部署者: %s", invoker)
+// 	}
 
-	// 解析部署者JSON
-	var deployer Identity
-	err = json.Unmarshal([]byte(deployerJSON), &deployer)
-	if err != nil {
-		return fmt.Errorf("JSON解析失败: %v", err)
-	}
+// 	// 解析部署者JSON
+// 	var deployer Identity
+// 	err = json.Unmarshal([]byte(deployerJSON), &deployer)
+// 	if err != nil {
+// 		return fmt.Errorf("JSON解析失败: %v", err)
+// 	}
 
-	// 存储部署者
-	deployerKey, err := ctx.GetStub().CreateCompositeKey("deployer", []string{deployer.Address})
-	if err != nil {
-		return err
-	}
-	// 检查是否存在
-	existing, err := ctx.GetStub().GetState(deployerKey)
-	if err != nil {
-		return err
-	}
-	if existing != nil {
-		return fmt.Errorf("部署者已存在: %s", deployer.Address)
-	}
-	deployerBytes, err := json.Marshal(deployer)
-	if err != nil {
-		return err
-	}
+// 	// 存储部署者
+// 	deployerKey, err := ctx.GetStub().CreateCompositeKey("deployer", []string{deployer.Address})
+// 	if err != nil {
+// 		return err
+// 	}
+// 	// 检查是否存在
+// 	existing, err := ctx.GetStub().GetState(deployerKey)
+// 	if err != nil {
+// 		return err
+// 	}
+// 	if existing != nil {
+// 		return fmt.Errorf("部署者已存在: %s", deployer.Address)
+// 	}
+// 	deployerBytes, err := json.Marshal(deployer)
+// 	if err != nil {
+// 		return err
+// 	}
 
-	return ctx.GetStub().PutState(deployerKey, deployerBytes)
-}
+// 	return ctx.GetStub().PutState(deployerKey, deployerBytes)
+// }
 
-// 移除授权部署者
-func (ac *AccessControlContract) RemoveAuthorizedDeployer(ctx contractapi.TransactionContextInterface, deployerID string) error {
-	// 验证调用者身份和权限
-	invoker, err := ac.getCallerIdentity(ctx)
-	if err != nil {
-		return fmt.Errorf("调用者身份验证失败: %v", err)
-	}
+// // 移除授权部署者
+// func (ac *AccessControlContract) RemoveAuthorizedDeployer(ctx contractapi.TransactionContextInterface, deployerID string) error {
+// 	// 验证调用者身份和权限
+// 	invoker, err := ac.getCallerIdentity(ctx)
+// 	if err != nil {
+// 		return fmt.Errorf("调用者身份验证失败: %v", err)
+// 	}
 
-	if isAuth, err := ac.isAuthorizedDeployer(ctx, invoker); !isAuth {
-		if err != nil {
-			return fmt.Errorf("部署者验证失败: %v", err)
-		}
-		return fmt.Errorf("不是合法部署者: %s", invoker)
-	}
+// 	if isAuth, err := ac.isAuthorizedDeployer(ctx, invoker); !isAuth {
+// 		if err != nil {
+// 			return fmt.Errorf("部署者验证失败: %v", err)
+// 		}
+// 		return fmt.Errorf("不是合法部署者: %s", invoker)
+// 	}
 
-	// 检查要移除的部署者是否存在
-	deployerKey, err := ctx.GetStub().CreateCompositeKey("deployer", []string{deployerID})
-	if err != nil {
-		return err
-	}
+// 	// 检查要移除的部署者是否存在
+// 	deployerKey, err := ctx.GetStub().CreateCompositeKey("deployer", []string{deployerID})
+// 	if err != nil {
+// 		return err
+// 	}
 
-	deployerBytes, err := ctx.GetStub().GetState(deployerKey)
-	if err != nil {
-		return err
-	}
-	if deployerBytes == nil {
-		return fmt.Errorf("部署者不存在: %s", deployerID)
-	}
+// 	deployerBytes, err := ctx.GetStub().GetState(deployerKey)
+// 	if err != nil {
+// 		return err
+// 	}
+// 	if deployerBytes == nil {
+// 		return fmt.Errorf("部署者不存在: %s", deployerID)
+// 	}
 
-	// 删除部署者
-	return ctx.GetStub().DelState(deployerKey)
-}
-
-
-
+// 	// 删除部署者
+// 	return ctx.GetStub().DelState(deployerKey)
+// }
