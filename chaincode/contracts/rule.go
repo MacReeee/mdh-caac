@@ -38,11 +38,11 @@ const (
 type AccessRule struct {
 	RuleID              string              `json:"rule_id"`
 	Priority            int                 `json:"priority"`
-	Effect              Effect              `json:"effect"`              // allow/deny
+	Effect              Effect              `json:"effect"`               // allow/deny
 	SubjectConstraints  SubjectConstraints  `json:"subject_constraints"`  // 主体约束
 	ResourceConstraints ResourceConstraints `json:"resource_constraints"` // 资源约束
-	ContextConstraints  ContextConstraints  `json:"context_constraints"` // 上下文约束
-	DataOperations      []operation         `json:"data_operations"`     // 允许的操作
+	ContextConstraints  ContextConstraints  `json:"context_constraints"`  // 上下文约束
+	DataOperations      []operation         `json:"data_operations"`      // 允许的操作
 }
 
 // 验证规则部署交易发起者是否合法
@@ -137,34 +137,38 @@ func (ac *AccessControlContract) checkRuleConflicts(ctx contractapi.TransactionC
 	return nil
 }
 
+const (
+	resourceRuleObjectType = "resource_rule"
+)
+
+func createResourceRuleKey(ctx contractapi.TransactionContextInterface, resourceID string, ruleID string) (string, error) {
+	return ctx.GetStub().CreateCompositeKey("resource_rule", []string{resourceID, ruleID})
+}
+
 // 获取适用的规则
 func (ac *AccessControlContract) getApplicableRules(ctx contractapi.TransactionContextInterface, request AccessRequest) ([]AccessRule, error) {
 	var applicable []AccessRule
 
-	iterator, err := ctx.GetStub().GetStateByPartialCompositeKey("rule", []string{})
+	// 使用资源ID直接获取相关规则
+	iterator, err := ctx.GetStub().GetStateByPartialCompositeKey(resourceRuleObjectType, []string{request.ResourceID})
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to get resource rules iterator: %v", err)
 	}
 	defer iterator.Close()
 
+	// 遍历该资源的所有规则
 	for iterator.HasNext() {
 		queryResponse, err := iterator.Next()
 		if err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to get next rule: %v", err)
 		}
 
 		var rule AccessRule
 		if err := json.Unmarshal(queryResponse.Value, &rule); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to unmarshal rule: %v", err)
 		}
 
-		// 检查资源ID是否匹配
-		for _, rid := range rule.ResourceConstraints.ResourceIDs {
-			if rid == request.ResourceID {
-				applicable = append(applicable, rule)
-				break
-			}
-		}
+		applicable = append(applicable, rule)
 	}
 
 	// 规则按优先级排序

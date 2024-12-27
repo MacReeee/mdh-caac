@@ -98,108 +98,95 @@ type AccessResult struct {
 	Reason    string        `json:"reason"`    // 决策原因
 }
 
-func generatePairKey(requester, owner Identity) string {
-	return fmt.Sprintf("%s_%s", requester.Address, owner.Address)
+const (
+	userPairObjectType     = "UserPair"
+	accessResultObjectType = "AccessResult"
+)
+
+func createAccessResultKey(ctx contractapi.TransactionContextInterface, result AccessResult) (string, error) {
+	return ctx.GetStub().CreateCompositeKey(accessResultObjectType, []string{
+		result.Request.ResourceOwner.Address,
+		result.Request.Requester.Address,
+		fmt.Sprintf("%d", result.Timestamp),
+		result.Request.RequestID}) //现在是addr2 addr1 reqID，到时候改成domain2 addr2 domain1 addr1 reqID，先Owner再Requster是因为更关注被访问记录
 }
 
-// 添加新的访问记录
+// 记录新的访问记录
 func (ac *AccessControlContract) recordAccessResult(ctx contractapi.TransactionContextInterface, result AccessResult) error {
 	// 存储结果记录
-	resultKey, err := ctx.GetStub().CreateCompositeKey("result", []string{result.Request.RequestID})
+	resultKey, err := createAccessResultKey(ctx, result)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to create access result key: %v", err)
 	}
+
 	resultBytes, err := json.Marshal(result)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to marshal access result: %v", err)
 	}
+
 	if err := ctx.GetStub().PutState(resultKey, resultBytes); err != nil {
-		return err
+		return fmt.Errorf("failed to put access result in state: %v", err)
 	}
 
-	// 存储按用户对的索引
-	pairKey := generatePairKey(result.Request.Requester, result.Request.ResourceOwner)
-	indexKey, err := ctx.GetStub().CreateCompositeKey("result_pair", []string{pairKey, result.Request.RequestID})
-	if err != nil {
-		return err
-	}
-	if err := ctx.GetStub().PutState(indexKey, []byte{0}); err != nil {
-		return err
-	}
+	// if err := ac.updateDirectTrust(ctx, result); err != nil {
+	// 	return err
+	// }
 
-	// 存储按资源的索引
-	resourceKey, err := ctx.GetStub().CreateCompositeKey("result_resource",
-		[]string{result.Request.ResourceID, result.Request.RequestID})
-	if err != nil {
-		return err
-	}
-	if ctx.GetStub().PutState(resourceKey, []byte{0}); err != nil {
-		return err
-	}
+	// if err := ac.updateNodeContribution(ctx, result); err != nil {
+	// 	return err
+	// }
 
-	if err := ac.updateDirectTrust(ctx, result); err != nil {
-		return err
-	}
-
-	if err := ac.updateNodeContribution(ctx, result); err != nil {
-		return err
-	}
-
-	if err := ac.updateDomainContribution(ctx, result); err != nil {
-		return err
-	}
+	// if err := ac.updateDomainContribution(ctx, result); err != nil {
+	// 	return err
+	// }
 
 	return nil
 }
 
 // 获取访问历史
 func (ac *AccessControlContract) getAccessHistoryByIdentity(ctx contractapi.TransactionContextInterface,
-	caller, resourceProvider Identity, startTime, endTime int64) ([]AccessResult, error) {
+    caller, resourceProvider Identity, startTime, endTime int64) ([]AccessResult, error) {
+    
+    // 创建开始键(包含startTime)
+    startKey, err := ctx.GetStub().CreateCompositeKey(accessResultObjectType, []string{
+        resourceProvider.Address,
+        caller.Address,
+        fmt.Sprintf("%d", startTime),
+    })
+    if err != nil {
+        return nil, fmt.Errorf("failed to create start key: %v", err)
+    }
+    
+    // 创建结束键(包含endTime)
+    endKey, err := ctx.GetStub().CreateCompositeKey(accessResultObjectType, []string{
+        resourceProvider.Address,
+        caller.Address,
+        fmt.Sprintf("%d", endTime+1), // +1确保包含endTime的记录
+    })
+    if err != nil {
+        return nil, fmt.Errorf("failed to create end key: %v", err)
+    }
 
-	results := []AccessResult{}
-	pairKey := generatePairKey(caller, resourceProvider)
+    // 使用 GetStateByRange 进行范围查询
+    iterator, err := ctx.GetStub().GetStateByRange(startKey, endKey)
+    if err != nil {
+        return nil, fmt.Errorf("failed to get access history: %v", err)
+    }
+    defer iterator.Close()
 
-	// 获取该用户对的所有记录ID
-	iterator, err := ctx.GetStub().GetStateByPartialCompositeKey("result_pair", []string{pairKey})
-	if err != nil {
-		return nil, err
-	}
-	defer iterator.Close()
+    var results []AccessResult
+    for iterator.HasNext() {
+        queryResult, err := iterator.Next()
+        if err != nil {
+            return nil, fmt.Errorf("failed to get next result: %v", err)
+        }
 
-	// 遍历获取每条记录
-	for iterator.HasNext() {
-		queryResponse, err := iterator.Next()
-		if err != nil {
-			return nil, err
-		}
+        var result AccessResult
+        if err := json.Unmarshal(queryResult.Value, &result); err != nil {
+            return nil, fmt.Errorf("failed to unmarshal access result: %v", err)
+        }
+        results = append(results, result)
+    }
 
-		// 从复合键中提取RequestID
-		_, compositeKeyParts, err := ctx.GetStub().SplitCompositeKey(queryResponse.Key)
-		if err != nil {
-			return nil, err
-		}
-		requestID := compositeKeyParts[1]
-
-		// 获取结果记录
-		resultKey, err := ctx.GetStub().CreateCompositeKey("result", []string{requestID})
-		if err != nil {
-			return nil, err
-		}
-		resultBytes, err := ctx.GetStub().GetState(resultKey)
-		if err != nil {
-			return nil, err
-		}
-
-		var result AccessResult
-		if err := json.Unmarshal(resultBytes, &result); err != nil {
-			return nil, err
-		}
-
-		// 检查时间范围
-		if result.Timestamp >= startTime && result.Timestamp <= endTime {
-			results = append(results, result)
-		}
-	}
-
-	return results, nil
+    return results, nil
 }
