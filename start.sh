@@ -14,7 +14,7 @@ echo -e "${RED}创建通道${NC}"
 echo -e "${RED}部署链码${NC}"
 ./network.sh deployCC -c domain1channel -ccn mdh -ccp ./chaincode -ccl go
 ./network.sh deployCC -c domain2channel -ccn mdh -ccp ./chaincode -ccl go
-./network.sh deployCC -c gatewaychannel -ccn mdh-gateway -ccp ./chaincode -ccl go
+./network.sh deployCC -c gatewaychannel -ccn mdh -ccp ./chaincode -ccl go
 
 # 配置环境变量
 export PATH=$PATH:../bin
@@ -86,18 +86,18 @@ peer chaincode invoke -o localhost:7050 \
 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
 --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 
-# 测试域内访问
+# 域内访问测试
 npx caliper launch manager \
 --caliper-workspace ./ \
---caliper-networkconfig networks/fabric-network.yaml \
+--caliper-networkconfig networks/fabric-network-domain1.yaml \
 --caliper-benchconfig benchmarks/accessControl-test.yaml \
 --caliper-flow-only-test \
 --caliper-bind-sut fabric:2.5
 
-# 测试域间访问
+# 跨域访问测试
 npx caliper launch manager \
 --caliper-workspace ./ \
---caliper-networkconfig networks/fabric-network.yaml \
---caliper-benchconfig benchmarks/accessControl-test.yaml \
+--caliper-networkconfig networks/fabric-network-gateway.yaml \
+--caliper-benchconfig benchmarks/cross-domain-test.yaml \
 --caliper-flow-only-test \
 --caliper-bind-sut fabric:2.5

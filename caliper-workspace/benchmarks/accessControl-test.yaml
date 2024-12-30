@@ -17,29 +17,124 @@ test:
     #     arguments:
     #       assets: 50
 
-    # - label: access-request
-    #   description: Test access request
-    #   txNumber: 100
-    #   rateControl:
-    #     type: fixed-rate
-    #     opts:
-    #       tps: 10
-    #   workload:
-    #     module: workload/access.js
-    #     arguments:
-    #       assets: 100
-
-    - label: cross-domain-access
-      description: Test cross domain access through gateway channel
+    - label: access-request-01
+      description: Test access request
       txNumber: 100
       rateControl:
         type: fixed-rate
         opts:
           tps: 10
       workload:
-        module: workload/access.js # 使用现有的access.js
+        module: workload/access.js
         arguments:
-          channelId: gatewaychannel # 指定使用gateway channel
+          assets: 100
+
+    - label: access-request-02
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
+          assets: 100
+
+    - label: access-request-03
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
+          assets: 100
+
+    - label: access-request-04
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
+          assets: 100
+
+    - label: access-request-05
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
+          assets: 100
+    
+    - label: access-request-06
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
+          assets: 100
+
+    - label: access-request-07
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
+          assets: 100
+
+    - label: access-request-08
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
+          assets: 100
+
+    - label: access-request-09
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
+          assets: 100
+
+    - label: access-request-10
+      description: Test access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js
+        arguments:
           assets: 100
 
     # # 基准测试 - 低负载

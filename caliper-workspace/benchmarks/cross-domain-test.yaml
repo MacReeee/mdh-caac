@@ -1,0 +1,151 @@
+test:
+  name: Cross Domain Access Control Test
+  description: Test cross domain access control system performance
+  workers:
+    type: local
+    number: 10
+  rounds:
+    # - label: cross-domain-register
+    #   description: Test resource registration in gateway channel
+    #   txNumber: 50
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 5
+    #   workload:
+    #     module: workload/cross-access.js
+    #     arguments:
+    #       assets: 50
+          
+    - label: cross-domain-access-01
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-02
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-03
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-04
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-05
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-06
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-07
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-08
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-09
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+    - label: cross-domain-access-10
+      description: Test cross domain access request
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/cross-access.js
+        arguments:
+          assets: 100
+
+monitors:
+  resource:
+  - module: prometheus
+    options:
+      url: "http://localhost:9090"
+      metrics:
+        include: [dev-.*, couch, peer, orderer]
+        queries: []
+  transaction:
+  - module: prometheus
+    options:
+      url: "http://localhost:9090"
