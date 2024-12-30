@@ -1,0 +1,114 @@
+---
+client:
+  organization: Org1
+  logging:
+    level: info
+  cryptoconfig:
+    path: ../organizations
+  credentialStore:
+    path: "./wallet"
+    cryptoStore:
+      path: "./wallet"
+  BCCSP:
+    security:
+     enabled: true
+     default:
+       provider: "SW"
+     hashAlgorithm: "SHA2"
+     softVerify: true
+     level: 256
+
+channels:
+  domain1channel: # 你的通道名称
+    peers:
+      peer0.org1.example.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+      peer0.org2.example.com:  # 添加 org2 的背书节点
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+
+organizations:
+  Org1:
+    mspid: Org1MSP
+    cryptoPath: ../organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+    peers:
+      - peer0.org1.example.com
+  Org2:
+    mspid: Org2MSP
+    cryptoPath: ../organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+    peers:
+      - peer0.org2.example.com
+  Org3:
+    mspid: Org3MSP
+    cryptoPath: ../organizations/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp
+    peers:
+      - peer0.org3.example.com
+  Org4:
+    mspid: Org4MSP
+    cryptoPath: ../organizations/peerOrganizations/org4.example.com/users/Admin@org4.example.com/msp
+    peers:
+      - peer0.org4.example.com
+  Gateway1Org:
+    mspid: Gateway1OrgMSP
+    cryptoPath: ../organizations/peerOrganizations/gateway1.example.com/users/Admin@gateway1.example.com/msp
+    peers:
+      - peer0.gateway1.example.com
+  Gateway2Org:
+    mspid: Gateway2OrgMSP
+    cryptoPath: ../organizations/peerOrganizations/gateway2.example.com/users/Admin@gateway2.example.com/msp
+    peers:
+      - peer0.gateway2.example.com
+
+peers:
+  peer0.org1.example.com:
+    url: grpcs://localhost:7051
+    tlsCACerts:
+      path: ../organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+    grpcOptions:
+      ssl-target-name-override: peer0.org1.example.com
+      hostnameOverride: peer0.org1.example.com
+      keep-alive-time: 0s
+      keep-alive-timeout: 20s
+      keep-alive-permit: false
+      fail-fast: false
+      allow-insecure: false
+  peer0.org2.example.com:
+    url: grpcs://localhost:9051
+    tlsCACerts:
+      path: ../organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.example.com
+      hostnameOverride: peer0.org2.example.com
+  peer0.org3.example.com:
+    url: grpcs://localhost:11051
+    tlsCACerts:
+      path: ../organizations/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls/ca.crt
+    grpcOptions:
+      ssl-target-name-override: peer0.org3.example.com
+      hostnameOverride: peer0.org3.example.com
+  peer0.org4.example.com:
+    url: grpcs://localhost:13051
+    tlsCACerts:
+      path: ../organizations/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/tls/ca.crt
+    grpcOptions:
+      ssl-target-name-override: peer0.org4.example.com
+      hostnameOverride: peer0.org4.example.com
+  peer0.gateway1.example.com:
+    url: grpcs://localhost:7151
+    tlsCACerts:
+      path: ../organizations/peerOrganizations/gateway1.example.com/peers/peer0.gateway1.example.com/tls/ca.crt
+    grpcOptions:
+      ssl-target-name-override: peer0.gateway1.example.com
+      hostnameOverride: peer0.gateway1.example.com
+  peer0.gateway2.example.com:
+    url: grpcs://localhost:7251
+    tlsCACerts:
+      path: ../organizations/peerOrganizations/gateway2.example.com/peers/peer0.gateway2.example.com/tls/ca.crt
+    grpcOptions:
+      ssl-target-name-override: peer0.gateway2.example.com
+      hostnameOverride: peer0.gateway2.example.com

@@ -147,34 +147,50 @@ func createResourceRuleKey(ctx contractapi.TransactionContextInterface, resource
 
 // 获取适用的规则
 func (ac *AccessControlContract) getApplicableRules(ctx contractapi.TransactionContextInterface, request AccessRequest) ([]AccessRule, error) {
-	var applicable []AccessRule
+    // 添加调试日志
+    fmt.Printf("开始查找资源 %s 的规则\n", request.ResourceID)
 
-	// 使用资源ID直接获取相关规则
-	iterator, err := ctx.GetStub().GetStateByPartialCompositeKey(resourceRuleObjectType, []string{request.ResourceID})
-	if err != nil {
-		return nil, fmt.Errorf("failed to get resource rules iterator: %v", err)
-	}
-	defer iterator.Close()
+    iterator, err := ctx.GetStub().GetStateByPartialCompositeKey(resourceRuleObjectType, []string{request.ResourceID})
+    if err != nil {
+        fmt.Printf("获取Iterator失败: %v\n", err)
+        return nil, fmt.Errorf("failed to get resource rules iterator: %v", err)
+    }
+    defer iterator.Close()
 
-	// 遍历该资源的所有规则
-	for iterator.HasNext() {
-		queryResponse, err := iterator.Next()
-		if err != nil {
-			return nil, fmt.Errorf("failed to get next rule: %v", err)
-		}
+    var applicable []AccessRule
+    ruleCount := 0
 
-		var rule AccessRule
-		if err := json.Unmarshal(queryResponse.Value, &rule); err != nil {
-			return nil, fmt.Errorf("failed to unmarshal rule: %v", err)
-		}
+    // 遍历该资源的所有规则
+    for iterator.HasNext() {
+        ruleCount++
+        queryResponse, err := iterator.Next()
+        if err != nil {
+            fmt.Printf("获取下一条规则失败: %v\n", err)
+            return nil, fmt.Errorf("failed to get next rule: %v", err)
+        }
 
-		applicable = append(applicable, rule)
-	}
+        fmt.Printf("找到第 %d 条规则，键为: %s\n", ruleCount, queryResponse.Key)
 
-	// 规则按优先级排序
-	sort.Slice(applicable, func(i, j int) bool {
-		return applicable[i].Priority > applicable[j].Priority
-	})
+        var rule AccessRule
+        if err := json.Unmarshal(queryResponse.Value, &rule); err != nil {
+            fmt.Printf("规则解析失败: %v\n", err)
+            return nil, fmt.Errorf("failed to unmarshal rule: %v", err)
+        }
 
-	return applicable, nil
+        applicable = append(applicable, rule)
+    }
+
+    if ruleCount == 0 {
+        fmt.Printf("未找到资源 %s 的任何规则\n", request.ResourceID)
+        return nil, fmt.Errorf("无可用规则")
+    }
+
+    fmt.Printf("共找到 %d 条规则\n", ruleCount)
+
+    // 规则按优先级排序
+    sort.Slice(applicable, func(i, j int) bool {
+        return applicable[i].Priority > applicable[j].Priority
+    })
+
+    return applicable, nil
 }

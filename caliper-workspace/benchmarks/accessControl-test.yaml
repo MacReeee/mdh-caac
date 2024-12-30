@@ -1,0 +1,108 @@
+test:
+  name: Access Control Test
+  description: Test access control system performance
+  workers:
+    type: local
+    number: 10
+  rounds:
+    # - label: register-resource
+    #   description: Test resource registration
+    #   txNumber: 50
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 5
+    #   workload:
+    #     module: workload/register.js
+    #     arguments:
+    #       assets: 50
+
+    # - label: access-request
+    #   description: Test access request
+    #   txNumber: 100
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 10
+    #   workload:
+    #     module: workload/access.js
+    #     arguments:
+    #       assets: 100
+
+    - label: cross-domain-access
+      description: Test cross domain access through gateway channel
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/access.js # 使用现有的access.js
+        arguments:
+          channelId: gatewaychannel # 指定使用gateway channel
+          assets: 100
+
+    # # 基准测试 - 低负载
+    # - label: baseline
+    #   description: Baseline test with low load
+    #   txNumber: 100
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 10
+    #   workload:
+    #     module: workload/access.js
+    #     arguments:
+    #       assets: 100
+
+    # # 中等负载测试
+    # - label: medium-load  
+    #   description: Medium load test
+    #   txNumber: 200
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 50
+    #   workload:
+    #     module: workload/access.js
+    #     arguments:
+    #       assets: 200
+
+    # # 高负载测试
+    # - label: high-load
+    #   description: High load test
+    #   txNumber: 500
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 100
+    #   workload:
+    #     module: workload/access.js
+    #     arguments:
+    #       assets: 500
+
+    # # 压力测试
+    # - label: stress-test
+    #   description: Stress test
+    #   txNumber: 1000
+    #   rateControl:
+    #     type: fixed-rate
+    #     opts:
+    #       tps: 130
+    #   workload:
+    #     module: workload/access.js
+    #     arguments:
+    #       assets: 1000
+
+monitors:
+  resource:
+  - module: prometheus
+    options:
+      url: "http://localhost:9090"
+      metrics:
+        include: [dev-.*, couch, peer, orderer]
+        queries: []
+  transaction:
+  - module: prometheus
+    options:
+      url: "http://localhost:9090"

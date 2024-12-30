@@ -1,10 +1,20 @@
 #! /bin/bash
 
 # 启动网络
+RED='\033[0;31m'  # 红色
+NC='\033[0m'      # 无颜色（重置）
+echo -e "${RED}关闭网络${NC}"
 ./network.sh down
+echo -e "${RED}启动网络${NC}"
 ./network.sh up
+echo -e "${RED}创建通道${NC}"
 ./network.sh createChannel -c domain1channel
+./network.sh createChannel -c domain2channel
+./network.sh createChannel -c gatewaychannel
+echo -e "${RED}部署链码${NC}"
 ./network.sh deployCC -c domain1channel -ccn mdh -ccp ./chaincode -ccl go
+./network.sh deployCC -c domain2channel -ccn mdh -ccp ./chaincode -ccl go
+./network.sh deployCC -c gatewaychannel -ccn mdh-gateway -ccp ./chaincode -ccl go
 
 # 配置环境变量
 export PATH=$PATH:../bin
@@ -75,3 +85,19 @@ peer chaincode invoke -o localhost:7050 \
 -c '{"function":"RequestAccess","Args":["{\"request_id\":\"req002\",\"requester\":{\"address\":\"x509::CN=Admin@org1.example.com,OU=admin,L=San Francisco,ST=California,C=US::CN=ca.org1.example.com,O=org1.example.com,L=San Francisco,ST=California,C=US\",\"msp_id\":\"Org1MSP\"},\"resource_id\":\"doc001\",\"operation\":0,\"context\":{\"location\":{\"x_coordinate\":20000,\"y_coordinate\":20000},\"time\":1703653200},\"timestamp\":1703653200}"]}' \
 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
 --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+
+# 测试域内访问
+npx caliper launch manager \
+--caliper-workspace ./ \
+--caliper-networkconfig networks/fabric-network.yaml \
+--caliper-benchconfig benchmarks/accessControl-test.yaml \
+--caliper-flow-only-test \
+--caliper-bind-sut fabric:2.5
+
+# 测试域间访问
+npx caliper launch manager \
+--caliper-workspace ./ \
+--caliper-networkconfig networks/fabric-network.yaml \
+--caliper-benchconfig benchmarks/accessControl-test.yaml \
+--caliper-flow-only-test \
+--caliper-bind-sut fabric:2.5
