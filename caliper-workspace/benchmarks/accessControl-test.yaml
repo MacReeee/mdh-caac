@@ -3,7 +3,7 @@ test:
   description: Test access control system performance
   workers:
     type: local
-    number: 10
+    number: 5
   rounds:
     # - label: register-resource
     #   description: Test resource registration
@@ -23,7 +23,7 @@ test:
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -31,11 +31,11 @@ test:
 
     - label: access-request-02
       description: Test access request
-      txNumber: 100
+      txNumber: 200
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -43,11 +43,11 @@ test:
 
     - label: access-request-03
       description: Test access request
-      txNumber: 100
+      txNumber: 300
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -55,11 +55,11 @@ test:
 
     - label: access-request-04
       description: Test access request
-      txNumber: 100
+      txNumber: 400
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -67,11 +67,11 @@ test:
 
     - label: access-request-05
       description: Test access request
-      txNumber: 100
+      txNumber: 500
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -79,11 +79,11 @@ test:
     
     - label: access-request-06
       description: Test access request
-      txNumber: 100
+      txNumber: 600
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -91,11 +91,11 @@ test:
 
     - label: access-request-07
       description: Test access request
-      txNumber: 100
+      txNumber: 700
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -103,11 +103,11 @@ test:
 
     - label: access-request-08
       description: Test access request
-      txNumber: 100
+      txNumber: 800
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -115,11 +115,11 @@ test:
 
     - label: access-request-09
       description: Test access request
-      txNumber: 100
+      txNumber: 900
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:
@@ -127,11 +127,11 @@ test:
 
     - label: access-request-10
       description: Test access request
-      txNumber: 100
+      txNumber: 1000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: workload/access.js
         arguments:

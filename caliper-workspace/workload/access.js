@@ -134,7 +134,7 @@ class AccessWorkload extends WorkloadModuleBase {
             timestamp: Math.floor(Date.now() / 1000)
         };
 
-        console.log(`发送访问请求: ${request.request_id}, 资源: ${request.resource_id}`);
+        // console.log(`发送访问请求: ${request.request_id}, 资源: ${request.resource_id}`);
 
         const args = {
             contractId: 'mdh',

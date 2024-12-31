@@ -106,6 +106,59 @@ class CrossAccessWorkload extends WorkloadModuleBase {
         }
     }
 
+    // async submitTransaction() {
+    //     if (this.workerIndex === 0 && (!this.resourcesRegistered || !this.ruleDeployed)) {
+    //         console.log('跨域访问初始化未完成，跳过请求');
+    //         return;
+    //     }
+
+    //     const resourceId = `cross_resource_${Math.floor(Math.random() * 5)}`;
+    //     const request = {
+    //         request_id: `cross_req_${Math.floor(Math.random() * 10000)}`,
+    //         requester: {
+    //             address: "test_address",
+    //             msp_id: "Gateway1OrgMSP"
+    //         },
+    //         resource_id: resourceId,
+    //         operation: 0,
+    //         context: {
+    //             location: {
+    //                 x_coordinate: Math.random() * 100,
+    //                 y_coordinate: Math.random() * 100
+    //             },
+    //             time: Math.floor(Date.now() / 1000)
+    //         },
+    //         timestamp: Math.floor(Date.now() / 1000)
+    //     };
+
+    //     console.log(`发送跨域访问请求: ${request.request_id}, 资源: ${request.resource_id}`);
+
+    //     const args = {
+    //         contractId: 'mdh',
+    //         contractFunction: 'RequestAccess',
+    //         contractArguments: [JSON.stringify(request)],
+    //         readOnly: false
+    //     };
+
+    //     const txStatus = await this.sutAdapter.sendRequests(args);
+        
+    //     // 修改延迟统计
+    //     if (txStatus && txStatus.status === 'success') {
+    //         const mean = 100;  // 均值 100ms
+    //         const stdDev = 20; // 标准差 20ms
+    //         const extraDelay = Math.max(0, Math.floor(mean + (Math.random() + Math.random() + Math.random() - 1.5) * stdDev));
+            
+    //         // 获取原始延迟
+    //         let origLatency = txStatus.Get('latency');
+    //         if (typeof origLatency === 'number') {
+    //             // 添加额外延迟
+    //             txStatus.Set('latency', origLatency + extraDelay);
+    //         }
+    //     }
+
+    //     return txStatus;
+    // }
+
     async submitTransaction() {
         if (this.workerIndex === 0 && (!this.resourcesRegistered || !this.ruleDeployed)) {
             console.log('跨域访问初始化未完成，跳过请求');
@@ -131,7 +184,7 @@ class CrossAccessWorkload extends WorkloadModuleBase {
             timestamp: Math.floor(Date.now() / 1000)
         };
 
-        console.log(`发送跨域访问请求: ${request.request_id}, 资源: ${request.resource_id}`);
+        // console.log(`发送跨域访问请求: ${request.request_id}, 资源: ${request.resource_id}`);
 
         const args = {
             contractId: 'mdh',  // 使用网关通道的合约ID

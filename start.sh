@@ -26,6 +26,9 @@ export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.examp
 export CORE_PEER_ADDRESS=localhost:7051
 export ORDERER_CA=${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
+# 查询已安装链码
+peer lifecycle chaincode queryinstalled
+
 # 注册资源
 peer chaincode invoke -o localhost:7050 \
 --ordererTLSHostnameOverride orderer.example.com \
