@@ -214,23 +214,23 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Gateway4OrgMSP.peer')"
 
-    # - &Gateway5Org
-    #     Name: Gateway5OrgMSP
-    #     ID: Gateway5OrgMSP
-    #     MSPDir: ../organizations/peerOrganizations/gateway5.example.com/msp
-    #     Policies:
-    #         Readers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway5OrgMSP.admin', 'Gateway5OrgMSP.peer', 'Gateway5OrgMSP.client')"
-    #         Writers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway5OrgMSP.admin', 'Gateway5OrgMSP.client')"
-    #         Admins:
-    #             Type: Signature
-    #             Rule: "OR('Gateway5OrgMSP.admin')"
-    #         Endorsement:
-    #             Type: Signature
-    #             Rule: "OR('Gateway5OrgMSP.peer')"
+    - &Gateway5Org
+        Name: Gateway5OrgMSP
+        ID: Gateway5OrgMSP
+        MSPDir: ../organizations/peerOrganizations/gateway5.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Gateway5OrgMSP.admin', 'Gateway5OrgMSP.peer', 'Gateway5OrgMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Gateway5OrgMSP.admin', 'Gateway5OrgMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Gateway5OrgMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Gateway5OrgMSP.peer')"
 
     # - &Gateway6Org
     #     Name: Gateway6OrgMSP
@@ -479,7 +479,7 @@ Profiles:
                     - *Gateway2Org
                     - *Gateway3Org
                     - *Gateway4Org
-                    # - *Gateway5Org
+                    - *Gateway5Org
                     # - *Gateway6Org
 
     # 网关组织的全局channel
@@ -493,7 +493,7 @@ Profiles:
                 - *Gateway2Org
                 - *Gateway3Org
                 - *Gateway4Org
-                # - *Gateway5Org
+                - *Gateway5Org
                 # - *Gateway6Org
             Capabilities:
                 <<: *ApplicationCapabilities

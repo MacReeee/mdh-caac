@@ -217,7 +217,7 @@ commitChaincodeDefinition() {
         --peerAddresses localhost:7251 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway2.example.com/peers/peer0.gateway2.example.com/tls/ca.crt \
         --peerAddresses localhost:7351 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway3.example.com/peers/peer0.gateway3.example.com/tls/ca.crt \
         --peerAddresses localhost:7451 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway4.example.com/peers/peer0.gateway4.example.com/tls/ca.crt \
-        # --peerAddresses localhost:7551 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway5.example.com/peers/peer0.gateway5.example.com/tls/ca.crt \
+        --peerAddresses localhost:7551 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway5.example.com/peers/peer0.gateway5.example.com/tls/ca.crt \
         # --peerAddresses localhost:7651 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway6.example.com/peers/peer0.gateway6.example.com/tls/ca.crt \
         ${INIT_REQUIRED} ${CC_END_POLICY} ${CC_COLL_CONFIG}
 
@@ -332,8 +332,8 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     installChaincode 7
     infoln "Installing chaincode on gateway4 peer..."
     installChaincode 8
-    # infoln "Installing chaincode on gateway5 peer..."
-    # installChaincode 9
+    infoln "Installing chaincode on gateway5 peer..."
+    installChaincode 9
     # infoln "Installing chaincode on gateway6 peer..."
     # installChaincode 10
     
@@ -343,7 +343,7 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     approveForMyOrg 6
     approveForMyOrg 7
     approveForMyOrg 8
-    # approveForMyOrg 9
+    approveForMyOrg 9
     # approveForMyOrg 10
     
     # 更新所有组织的检查(6节点)
@@ -354,13 +354,14 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     # checkCommitReadiness 9 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true"
     # checkCommitReadiness 10 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true"
     
-    checkCommitReadiness 5 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true"
-    checkCommitReadiness 6 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true"
-    checkCommitReadiness 7 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true"
-    checkCommitReadiness 8 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true"
+    checkCommitReadiness 5 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
+    checkCommitReadiness 6 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
+    checkCommitReadiness 7 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
+    checkCommitReadiness 8 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
+    checkCommitReadiness 9 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
 
     # 更新提交命令包含所有组织
-    commitChaincodeDefinition 5 6 7 8
+    commitChaincodeDefinition 5 6 7 8 9
 
 elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
     infoln "Installing chaincode on org1 peer..."
@@ -423,7 +424,7 @@ if [ "$CC_INIT_FCN" = "NA" ]; then
   infoln "Chaincode initialization is not required"
 else
   if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
-    chaincodeInvokeInit 5 6 7 8
+    chaincodeInvokeInit 5 6 7 8 9
   elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
     chaincodeInvokeInit 1 2 5
   elif [ "$CHANNEL_NAME" == "domain2channel" ]; then
