@@ -211,35 +211,35 @@ function createOrgs() {
       fatalln "Failed to generate certificates..."
     fi
 
-    # # 添加Gateway4Org的证书生成
-    # infoln "Creating Gateway4 Org Identities"
-    # set -x
-    # cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway4.yaml --output="organizations"
-    # res=$?
-    # { set +x; } 2>/dev/null
-    # if [ $res -ne 0 ]; then
-    #   fatalln "Failed to generate certificates..."
-    # fi
+    # 添加Gateway4Org的证书生成
+    infoln "Creating Gateway4 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway4.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
 
-    # # 添加Gateway5Org的证书生成
-    # infoln "Creating Gateway5 Org Identities"
-    # set -x
-    # cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway5.yaml --output="organizations"
-    # res=$?
-    # { set +x; } 2>/dev/null
-    # if [ $res -ne 0 ]; then
-    #   fatalln "Failed to generate certificates..."
-    # fi
+    # 添加Gateway5Org的证书生成
+    infoln "Creating Gateway5 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway5.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
 
-    # # 添加Gateway6Org的证书生成
-    # infoln "Creating Gateway6 Org Identities"
-    # set -x
-    # cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway6.yaml --output="organizations"
-    # res=$?
-    # { set +x; } 2>/dev/null
-    # if [ $res -ne 0 ]; then
-    #   fatalln "Failed to generate certificates..."
-    # fi
+    # 添加Gateway6Org的证书生成
+    infoln "Creating Gateway6 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway6.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
 
     infoln "Creating Orderer Org Identities"
     set -x

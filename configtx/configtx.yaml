@@ -196,23 +196,23 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Gateway3OrgMSP.peer')"
 
-    # - &Gateway4Org
-    #     Name: Gateway4OrgMSP
-    #     ID: Gateway4OrgMSP
-    #     MSPDir: ../organizations/peerOrganizations/gateway4.example.com/msp
-    #     Policies:
-    #         Readers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway4OrgMSP.admin', 'Gateway4OrgMSP.peer', 'Gateway4OrgMSP.client')"
-    #         Writers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway4OrgMSP.admin', 'Gateway4OrgMSP.client')"
-    #         Admins:
-    #             Type: Signature
-    #             Rule: "OR('Gateway4OrgMSP.admin')"
-    #         Endorsement:
-    #             Type: Signature
-    #             Rule: "OR('Gateway4OrgMSP.peer')"
+    - &Gateway4Org
+        Name: Gateway4OrgMSP
+        ID: Gateway4OrgMSP
+        MSPDir: ../organizations/peerOrganizations/gateway4.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Gateway4OrgMSP.admin', 'Gateway4OrgMSP.peer', 'Gateway4OrgMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Gateway4OrgMSP.admin', 'Gateway4OrgMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Gateway4OrgMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Gateway4OrgMSP.peer')"
 
     # - &Gateway5Org
     #     Name: Gateway5OrgMSP
@@ -478,7 +478,7 @@ Profiles:
                     - *Gateway1Org
                     - *Gateway2Org
                     - *Gateway3Org
-                    # - *Gateway4Org
+                    - *Gateway4Org
                     # - *Gateway5Org
                     # - *Gateway6Org
 
@@ -492,7 +492,7 @@ Profiles:
                 - *Gateway1Org    # 只有网关组织参与
                 - *Gateway2Org
                 - *Gateway3Org
-                # - *Gateway4Org
+                - *Gateway4Org
                 # - *Gateway5Org
                 # - *Gateway6Org
             Capabilities:
