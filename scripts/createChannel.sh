@@ -110,14 +110,32 @@ successln "Channel '$CHANNEL_NAME' created"
 
 ## 根据不同的channel加入不同的组织
 if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
-    infoln "Joining gateway1 peers to the channel..."
+    infoln "网关1组织正在加入gatewaychannel..."
     joinChannel 5
-    infoln "Joining gateway2 peers to the channel..."
+    infoln "网关2组织正在加入gatewaychannel..."
     joinChannel 6
-    infoln "Setting anchor peer for gateway1 org..."
+    infoln "网关3组织正在加入gatewaychannel..."
+    joinChannel 7
+    infoln "网关4组织正在加入gatewaychannel..."
+    joinChannel 8
+    infoln "网关5组织正在加入gatewaychannel..."
+    joinChannel 9
+    infoln "网关6组织正在加入gatewaychannel..."
+    joinChannel 10
+
+    infoln "设定网关1组织的锚节点..."
     setAnchorPeer 5
-    infoln "Setting anchor peer for gateway2 org..."
+    infoln "设定网关2组织的锚节点..."
     setAnchorPeer 6
+    infoln "设定网关3组织的锚节点..."
+    setAnchorPeer 7
+    infoln "设定网关4组织的锚节点..."
+    setAnchorPeer 8
+    infoln "设定网关5组织的锚节点..."
+    setAnchorPeer 9
+    infoln "设定网关6组织的锚节点..."
+    setAnchorPeer 10    
+
 elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
     infoln "Joining org1 peer to the channel..."
     joinChannel 1

@@ -181,7 +181,7 @@ function createOrgs() {
       fatalln "Failed to generate certificates..."
     fi
 
-    # 添加GatewayOrg的证书生成
+    # 添加Gateway1Org的证书生成
     infoln "Creating Gateway1 Org Identities"
     set -x
     cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway1.yaml --output="organizations"
@@ -191,9 +191,50 @@ function createOrgs() {
       fatalln "Failed to generate certificates..."
     fi
 
+    # 添加Gateway2Org的证书生成
     infoln "Creating Gateway2 Org Identities"
     set -x
     cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway2.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
+
+    # 添加Gateway3Org的证书生成
+    infoln "Creating Gateway3 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway3.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
+
+    # 添加Gateway4Org的证书生成
+    infoln "Creating Gateway4 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway4.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
+
+    # 添加Gateway5Org的证书生成
+    infoln "Creating Gateway5 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway5.yaml --output="organizations"
+    res=$?
+    { set +x; } 2>/dev/null
+    if [ $res -ne 0 ]; then
+      fatalln "Failed to generate certificates..."
+    fi
+
+    # 添加Gateway6Org的证书生成
+    infoln "Creating Gateway6 Org Identities"
+    set -x
+    cryptogen generate --config=./organizations/cryptogen/crypto-config-gateway6.yaml --output="organizations"
     res=$?
     { set +x; } 2>/dev/null
     if [ $res -ne 0 ]; then
@@ -365,11 +406,20 @@ function networkDown() {
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf system-genesis-block/*.block organizations/peerOrganizations organizations/ordererOrganizations'
     
     ## remove fabric ca artifacts
+    # Org1-4
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/org1/msp organizations/fabric-ca/org1/tls-cert.pem organizations/fabric-ca/org1/ca-cert.pem organizations/fabric-ca/org1/IssuerPublicKey organizations/fabric-ca/org1/IssuerRevocationPublicKey organizations/fabric-ca/org1/fabric-ca-server.db'
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/org2/msp organizations/fabric-ca/org2/tls-cert.pem organizations/fabric-ca/org2/ca-cert.pem organizations/fabric-ca/org2/IssuerPublicKey organizations/fabric-ca/org2/IssuerRevocationPublicKey organizations/fabric-ca/org2/fabric-ca-server.db'
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/org3/msp organizations/fabric-ca/org3/tls-cert.pem organizations/fabric-ca/org3/ca-cert.pem organizations/fabric-ca/org3/IssuerPublicKey organizations/fabric-ca/org3/IssuerRevocationPublicKey organizations/fabric-ca/org3/fabric-ca-server.db'
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/org4/msp organizations/fabric-ca/org4/tls-cert.pem organizations/fabric-ca/org4/ca-cert.pem organizations/fabric-ca/org4/IssuerPublicKey organizations/fabric-ca/org4/IssuerRevocationPublicKey organizations/fabric-ca/org4/fabric-ca-server.db'
-    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/gateway/msp organizations/fabric-ca/gateway/tls-cert.pem organizations/fabric-ca/gateway/ca-cert.pem organizations/fabric-ca/gateway/IssuerPublicKey organizations/fabric-ca/gateway/IssuerRevocationPublicKey organizations/fabric-ca/gateway/fabric-ca-server.db'
+    
+    # Gateway1-6
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/gateway1/msp organizations/fabric-ca/gateway1/tls-cert.pem organizations/fabric-ca/gateway1/ca-cert.pem organizations/fabric-ca/gateway1/IssuerPublicKey organizations/fabric-ca/gateway1/IssuerRevocationPublicKey organizations/fabric-ca/gateway1/fabric-ca-server.db'
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/gateway2/msp organizations/fabric-ca/gateway2/tls-cert.pem organizations/fabric-ca/gateway2/ca-cert.pem organizations/fabric-ca/gateway2/IssuerPublicKey organizations/fabric-ca/gateway2/IssuerRevocationPublicKey organizations/fabric-ca/gateway2/fabric-ca-server.db'
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/gateway3/msp organizations/fabric-ca/gateway3/tls-cert.pem organizations/fabric-ca/gateway3/ca-cert.pem organizations/fabric-ca/gateway3/IssuerPublicKey organizations/fabric-ca/gateway3/IssuerRevocationPublicKey organizations/fabric-ca/gateway3/fabric-ca-server.db'
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/gateway4/msp organizations/fabric-ca/gateway4/tls-cert.pem organizations/fabric-ca/gateway4/ca-cert.pem organizations/fabric-ca/gateway4/IssuerPublicKey organizations/fabric-ca/gateway4/IssuerRevocationPublicKey organizations/fabric-ca/gateway4/fabric-ca-server.db'
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/gateway5/msp organizations/fabric-ca/gateway5/tls-cert.pem organizations/fabric-ca/gateway5/ca-cert.pem organizations/fabric-ca/gateway5/IssuerPublicKey organizations/fabric-ca/gateway5/IssuerRevocationPublicKey organizations/fabric-ca/gateway5/fabric-ca-server.db'
+    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/gateway6/msp organizations/fabric-ca/gateway6/tls-cert.pem organizations/fabric-ca/gateway6/ca-cert.pem organizations/fabric-ca/gateway6/IssuerPublicKey organizations/fabric-ca/gateway6/IssuerRevocationPublicKey organizations/fabric-ca/gateway6/fabric-ca-server.db'
+    
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf organizations/fabric-ca/ordererOrg/msp organizations/fabric-ca/ordererOrg/tls-cert.pem organizations/fabric-ca/ordererOrg/ca-cert.pem organizations/fabric-ca/ordererOrg/IssuerPublicKey organizations/fabric-ca/ordererOrg/IssuerRevocationPublicKey organizations/fabric-ca/ordererOrg/fabric-ca-server.db'
     
     # remove channel and script artifacts
