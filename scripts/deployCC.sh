@@ -218,7 +218,19 @@ commitChaincodeDefinition() {
         --peerAddresses localhost:7351 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway3.example.com/peers/peer0.gateway3.example.com/tls/ca.crt \
         --peerAddresses localhost:7451 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway4.example.com/peers/peer0.gateway4.example.com/tls/ca.crt \
         --peerAddresses localhost:7551 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway5.example.com/peers/peer0.gateway5.example.com/tls/ca.crt \
-        # --peerAddresses localhost:7651 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway6.example.com/peers/peer0.gateway6.example.com/tls/ca.crt \
+        --peerAddresses localhost:7651 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway6.example.com/peers/peer0.gateway6.example.com/tls/ca.crt \
+        --peerAddresses localhost:7751 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway7.example.com/peers/peer0.gateway7.example.com/tls/ca.crt \
+        --peerAddresses localhost:7851 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway8.example.com/peers/peer0.gateway8.example.com/tls/ca.crt \
+        --peerAddresses localhost:7951 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway9.example.com/peers/peer0.gateway9.example.com/tls/ca.crt \
+        --peerAddresses localhost:8051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway10.example.com/peers/peer0.gateway10.example.com/tls/ca.crt \
+        --peerAddresses localhost:8151 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway11.example.com/peers/peer0.gateway11.example.com/tls/ca.crt \
+        --peerAddresses localhost:8251 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway12.example.com/peers/peer0.gateway12.example.com/tls/ca.crt \
+        --peerAddresses localhost:8351 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway13.example.com/peers/peer0.gateway13.example.com/tls/ca.crt \
+        --peerAddresses localhost:8451 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway14.example.com/peers/peer0.gateway14.example.com/tls/ca.crt \
+        --peerAddresses localhost:8551 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway15.example.com/peers/peer0.gateway15.example.com/tls/ca.crt \
+        --peerAddresses localhost:8651 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway16.example.com/peers/peer0.gateway16.example.com/tls/ca.crt \
+        --peerAddresses localhost:8751 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway17.example.com/peers/peer0.gateway17.example.com/tls/ca.crt \
+        --peerAddresses localhost:8851 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway18.example.com/peers/peer0.gateway18.example.com/tls/ca.crt \
         ${INIT_REQUIRED} ${CC_END_POLICY} ${CC_COLL_CONFIG}
 
   elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
@@ -334,8 +346,32 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     installChaincode 8
     infoln "Installing chaincode on gateway5 peer..."
     installChaincode 9
-    # infoln "Installing chaincode on gateway6 peer..."
-    # installChaincode 10
+    infoln "Installing chaincode on gateway6 peer..."
+    installChaincode 10
+    infoln "Installing chaincode on gateway7 peer..."
+    installChaincode 11
+    infoln "Installing chaincode on gateway8 peer..."
+    installChaincode 12
+    infoln "Installing chaincode on gateway9 peer..."
+    installChaincode 13
+    infoln "Installing chaincode on gateway10 peer..."
+    installChaincode 14
+    infoln "Installing chaincode on gateway11 peer..."
+    installChaincode 15
+    infoln "Installing chaincode on gateway12 peer..."
+    installChaincode 16
+    infoln "Installing chaincode on gateway13 peer..."
+    installChaincode 17
+    infoln "Installing chaincode on gateway14 peer..."
+    installChaincode 18
+    infoln "Installing chaincode on gateway15 peer..."
+    installChaincode 19
+    infoln "Installing chaincode on gateway16 peer..."
+    installChaincode 20
+    infoln "Installing chaincode on gateway17 peer..."
+    installChaincode 21
+    infoln "Installing chaincode on gateway18 peer..."
+    installChaincode 22
     
     queryInstalled 5
     
@@ -344,24 +380,42 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     approveForMyOrg 7
     approveForMyOrg 8
     approveForMyOrg 9
-    # approveForMyOrg 10
+    approveForMyOrg 10
+    approveForMyOrg 11
+    approveForMyOrg 12
+    approveForMyOrg 13
+    approveForMyOrg 14
+    approveForMyOrg 15
+    approveForMyOrg 16
+    approveForMyOrg 17
+    approveForMyOrg 18
+    approveForMyOrg 19
+    approveForMyOrg 20
+    approveForMyOrg 21
+    approveForMyOrg 22
     
-    # 更新所有组织的检查(6节点)
-    # checkCommitReadiness 5 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true"
-    # checkCommitReadiness 6 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true"
-    # checkCommitReadiness 7 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true"
-    # checkCommitReadiness 8 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true"
-    # checkCommitReadiness 9 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true"
-    # checkCommitReadiness 10 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true"
-    
-    checkCommitReadiness 5 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
-    checkCommitReadiness 6 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
-    checkCommitReadiness 7 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
-    checkCommitReadiness 8 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
-    checkCommitReadiness 9 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true"
+    # 更新所有组织的检查
+    checkCommitReadiness 5 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 6 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 7 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 8 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 9 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 10 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 11 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 12 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 13 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 14 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 15 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 16 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 17 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 18 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 19 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 20 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 21 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
+    checkCommitReadiness 22 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
 
     # 更新提交命令包含所有组织
-    commitChaincodeDefinition 5 6 7 8 9
+    commitChaincodeDefinition 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
 
 elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
     infoln "Installing chaincode on org1 peer..."
@@ -424,7 +478,7 @@ if [ "$CC_INIT_FCN" = "NA" ]; then
   infoln "Chaincode initialization is not required"
 else
   if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
-    chaincodeInvokeInit 5 6 7 8 9
+    chaincodeInvokeInit 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
   elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
     chaincodeInvokeInit 1 2 5
   elif [ "$CHANNEL_NAME" == "domain2channel" ]; then

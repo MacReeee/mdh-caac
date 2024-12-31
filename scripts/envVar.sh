@@ -15,6 +15,18 @@ export PEER0_GATEWAY3_CA=${PWD}/organizations/peerOrganizations/gateway3.example
 export PEER0_GATEWAY4_CA=${PWD}/organizations/peerOrganizations/gateway4.example.com/peers/peer0.gateway4.example.com/tls/ca.crt
 export PEER0_GATEWAY5_CA=${PWD}/organizations/peerOrganizations/gateway5.example.com/peers/peer0.gateway5.example.com/tls/ca.crt
 export PEER0_GATEWAY6_CA=${PWD}/organizations/peerOrganizations/gateway6.example.com/peers/peer0.gateway6.example.com/tls/ca.crt
+export PEER0_GATEWAY7_CA=${PWD}/organizations/peerOrganizations/gateway7.example.com/peers/peer0.gateway7.example.com/tls/ca.crt
+export PEER0_GATEWAY8_CA=${PWD}/organizations/peerOrganizations/gateway8.example.com/peers/peer0.gateway8.example.com/tls/ca.crt
+export PEER0_GATEWAY9_CA=${PWD}/organizations/peerOrganizations/gateway9.example.com/peers/peer0.gateway9.example.com/tls/ca.crt
+export PEER0_GATEWAY10_CA=${PWD}/organizations/peerOrganizations/gateway10.example.com/peers/peer0.gateway10.example.com/tls/ca.crt
+export PEER0_GATEWAY11_CA=${PWD}/organizations/peerOrganizations/gateway11.example.com/peers/peer0.gateway11.example.com/tls/ca.crt
+export PEER0_GATEWAY12_CA=${PWD}/organizations/peerOrganizations/gateway12.example.com/peers/peer0.gateway12.example.com/tls/ca.crt
+export PEER0_GATEWAY13_CA=${PWD}/organizations/peerOrganizations/gateway13.example.com/peers/peer0.gateway13.example.com/tls/ca.crt
+export PEER0_GATEWAY14_CA=${PWD}/organizations/peerOrganizations/gateway14.example.com/peers/peer0.gateway14.example.com/tls/ca.crt
+export PEER0_GATEWAY15_CA=${PWD}/organizations/peerOrganizations/gateway15.example.com/peers/peer0.gateway15.example.com/tls/ca.crt
+export PEER0_GATEWAY16_CA=${PWD}/organizations/peerOrganizations/gateway16.example.com/peers/peer0.gateway16.example.com/tls/ca.crt
+export PEER0_GATEWAY17_CA=${PWD}/organizations/peerOrganizations/gateway17.example.com/peers/peer0.gateway17.example.com/tls/ca.crt
+export PEER0_GATEWAY18_CA=${PWD}/organizations/peerOrganizations/gateway18.example.com/peers/peer0.gateway18.example.com/tls/ca.crt
 
 
 # Set environment variables for the peer org
@@ -76,6 +88,66 @@ setGlobals() {
     export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY6_CA
     export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway6.example.com/users/Admin@gateway6.example.com/msp
     export CORE_PEER_ADDRESS=localhost:7651
+  elif [ $USING_ORG -eq 11 ]; then # Gateway7Org 使用数字11
+    export CORE_PEER_LOCALMSPID="Gateway7OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY7_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway7.example.com/users/Admin@gateway7.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:7751
+  elif [ $USING_ORG -eq 12 ]; then # Gateway8Org 使用数字12
+    export CORE_PEER_LOCALMSPID="Gateway8OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY8_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway8.example.com/users/Admin@gateway8.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:7851
+  elif [ $USING_ORG -eq 13 ]; then # Gateway9Org 使用数字13
+    export CORE_PEER_LOCALMSPID="Gateway9OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY9_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway9.example.com/users/Admin@gateway9.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:7951
+  elif [ $USING_ORG -eq 14 ]; then # Gateway10Org 使用数字14
+    export CORE_PEER_LOCALMSPID="Gateway10OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY10_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway10.example.com/users/Admin@gateway10.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8051
+  elif [ $USING_ORG -eq 15 ]; then # Gateway11Org 使用数字15
+    export CORE_PEER_LOCALMSPID="Gateway11OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY11_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway11.example.com/users/Admin@gateway11.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8151
+  elif [ $USING_ORG -eq 16 ]; then # Gateway12Org 使用数字16
+    export CORE_PEER_LOCALMSPID="Gateway12OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY12_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway12.example.com/users/Admin@gateway12.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8251
+  elif [ $USING_ORG -eq 17 ]; then # Gateway13Org 使用数字17
+    export CORE_PEER_LOCALMSPID="Gateway13OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY13_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway13.example.com/users/Admin@gateway13.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8351
+  elif [ $USING_ORG -eq 18 ]; then # Gateway14Org 使用数字18
+    export CORE_PEER_LOCALMSPID="Gateway14OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY14_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway14.example.com/users/Admin@gateway14.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8451
+  elif [ $USING_ORG -eq 19 ]; then # Gateway15Org 使用数字19
+    export CORE_PEER_LOCALMSPID="Gateway15OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY15_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway15.example.com/users/Admin@gateway15.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8551
+  elif [ $USING_ORG -eq 20 ]; then # Gateway16Org 使用数字20
+    export CORE_PEER_LOCALMSPID="Gateway16OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY16_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway16.example.com/users/Admin@gateway16.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8651
+  elif [ $USING_ORG -eq 21 ]; then # Gateway17Org 使用数字21
+    export CORE_PEER_LOCALMSPID="Gateway17OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY17_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway17.example.com/users/Admin@gateway17.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8751
+  elif [ $USING_ORG -eq 22 ]; then # Gateway18Org 使用数字22
+    export CORE_PEER_LOCALMSPID="Gateway18OrgMSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_GATEWAY18_CA
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/gateway18.example.com/users/Admin@gateway18.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:8851
   else
     errorln "ORG Unknown"
   fi
@@ -115,6 +187,30 @@ setGlobalsCLI() {
     export CORE_PEER_ADDRESS=peer0.gateway5.example.com:7551
   elif [ $USING_ORG -eq 10 ]; then
     export CORE_PEER_ADDRESS=peer0.gateway6.example.com:7651
+  elif [ $USING_ORG -eq 11 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway7.example.com:7751
+  elif [ $USING_ORG -eq 12 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway8.example.com:7851
+  elif [ $USING_ORG -eq 13 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway9.example.com:7951
+  elif [ $USING_ORG -eq 14 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway10.example.com:8051
+  elif [ $USING_ORG -eq 15 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway11.example.com:8151
+  elif [ $USING_ORG -eq 16 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway12.example.com:8251
+  elif [ $USING_ORG -eq 17 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway13.example.com:8351
+  elif [ $USING_ORG -eq 18 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway14.example.com:8451
+  elif [ $USING_ORG -eq 19 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway15.example.com:8551
+  elif [ $USING_ORG -eq 20 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway16.example.com:8651
+  elif [ $USING_ORG -eq 21 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway17.example.com:8751
+  elif [ $USING_ORG -eq 22 ]; then
+    export CORE_PEER_ADDRESS=peer0.gateway18.example.com:8851
   else
     errorln "ORG Unknown"
   fi
