@@ -126,8 +126,8 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     joinChannel 11
     infoln "网关8组织正在加入gatewaychannel..."
     joinChannel 12
-    # infoln "网关9组织正在加入gatewaychannel..."
-    # joinChannel 13
+    infoln "网关9组织正在加入gatewaychannel..."
+    joinChannel 13
     # infoln "网关10组织正在加入gatewaychannel..."
     # joinChannel 14
     # infoln "网关11组织正在加入gatewaychannel..."
@@ -163,8 +163,8 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     setAnchorPeer 11
     infoln "设定网关8组织的锚节点..."
     setAnchorPeer 12
-    # infoln "设定网关9组织的锚节点..."
-    # setAnchorPeer 13
+    infoln "设定网关9组织的锚节点..."
+    setAnchorPeer 13
     # infoln "设定网关10组织的锚节点..."
     # setAnchorPeer 14
     # infoln "设定网关11组织的锚节点..."

@@ -286,23 +286,23 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Gateway8OrgMSP.peer')"
 
-    # - &Gateway9Org
-    #     Name: Gateway9OrgMSP
-    #     ID: Gateway9OrgMSP
-    #     MSPDir: ../organizations/peerOrganizations/gateway9.example.com/msp
-    #     Policies:
-    #         Readers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway9OrgMSP.admin', 'Gateway9OrgMSP.peer', 'Gateway9OrgMSP.client')"
-    #         Writers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway9OrgMSP.admin', 'Gateway9OrgMSP.client')"
-    #         Admins:
-    #             Type: Signature
-    #             Rule: "OR('Gateway9OrgMSP.admin')"
-    #         Endorsement:
-    #             Type: Signature
-    #             Rule: "OR('Gateway9OrgMSP.peer')"
+    - &Gateway9Org
+        Name: Gateway9OrgMSP
+        ID: Gateway9OrgMSP
+        MSPDir: ../organizations/peerOrganizations/gateway9.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Gateway9OrgMSP.admin', 'Gateway9OrgMSP.peer', 'Gateway9OrgMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Gateway9OrgMSP.admin', 'Gateway9OrgMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Gateway9OrgMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Gateway9OrgMSP.peer')"
 
     # - &Gateway10Org
     #     Name: Gateway10OrgMSP
@@ -699,7 +699,7 @@ Profiles:
                     - *Gateway6Org
                     - *Gateway7Org
                     - *Gateway8Org
-                    # - *Gateway9Org
+                    - *Gateway9Org
                     # - *Gateway10Org
                     # - *Gateway11Org
                     # - *Gateway12Org
@@ -725,7 +725,7 @@ Profiles:
                 - *Gateway6Org
                 - *Gateway7Org
                 - *Gateway8Org
-                # - *Gateway9Org
+                - *Gateway9Org
                 # - *Gateway10Org
                 # - *Gateway11Org
                 # - *Gateway12Org
