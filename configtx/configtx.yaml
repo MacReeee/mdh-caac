@@ -304,23 +304,23 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Gateway9OrgMSP.peer')"
 
-    # - &Gateway10Org
-    #     Name: Gateway10OrgMSP
-    #     ID: Gateway10OrgMSP
-    #     MSPDir: ../organizations/peerOrganizations/gateway10.example.com/msp
-    #     Policies:
-    #         Readers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway10OrgMSP.admin', 'Gateway10OrgMSP.peer', 'Gateway10OrgMSP.client')"
-    #         Writers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway10OrgMSP.admin', 'Gateway10OrgMSP.client')"
-    #         Admins:
-    #             Type: Signature
-    #             Rule: "OR('Gateway10OrgMSP.admin')"
-    #         Endorsement:
-    #             Type: Signature
-    #             Rule: "OR('Gateway10OrgMSP.peer')"
+    - &Gateway10Org
+        Name: Gateway10OrgMSP
+        ID: Gateway10OrgMSP
+        MSPDir: ../organizations/peerOrganizations/gateway10.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Gateway10OrgMSP.admin', 'Gateway10OrgMSP.peer', 'Gateway10OrgMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Gateway10OrgMSP.admin', 'Gateway10OrgMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Gateway10OrgMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Gateway10OrgMSP.peer')"
 
     # - &Gateway11Org
     #     Name: Gateway11OrgMSP
@@ -700,7 +700,7 @@ Profiles:
                     - *Gateway7Org
                     - *Gateway8Org
                     - *Gateway9Org
-                    # - *Gateway10Org
+                    - *Gateway10Org
                     # - *Gateway11Org
                     # - *Gateway12Org
                     # - *Gateway13Org
@@ -726,7 +726,7 @@ Profiles:
                 - *Gateway7Org
                 - *Gateway8Org
                 - *Gateway9Org
-                # - *Gateway10Org
+                - *Gateway10Org
                 # - *Gateway11Org
                 # - *Gateway12Org
                 # - *Gateway13Org

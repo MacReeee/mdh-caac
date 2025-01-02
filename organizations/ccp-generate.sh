@@ -143,14 +143,14 @@ CAPEM=organizations/peerOrganizations/gateway9.example.com/ca/ca.gateway9.exampl
 echo "$(json_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > organizations/peerOrganizations/gateway9.example.com/connection-gateway9.json
 echo "$(yaml_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > organizations/peerOrganizations/gateway9.example.com/connection-gateway9.yaml
 
-# # 网关10
-# ORG=14
-# P0PORT=8051
-# CAPORT=20054
-# PEERPEM=organizations/peerOrganizations/gateway10.example.com/tlsca/tlsca.gateway10.example.com-cert.pem
-# CAPEM=organizations/peerOrganizations/gateway10.example.com/ca/ca.gateway10.example.com-cert.pem
-# echo "$(json_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > organizations/peerOrganizations/gateway10.example.com/connection-gateway10.json
-# echo "$(yaml_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > organizations/peerOrganizations/gateway10.example.com/connection-gateway10.yaml
+# 网关10
+ORG=14
+P0PORT=8051
+CAPORT=20054
+PEERPEM=organizations/peerOrganizations/gateway10.example.com/tlsca/tlsca.gateway10.example.com-cert.pem
+CAPEM=organizations/peerOrganizations/gateway10.example.com/ca/ca.gateway10.example.com-cert.pem
+echo "$(json_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > organizations/peerOrganizations/gateway10.example.com/connection-gateway10.json
+echo "$(yaml_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > organizations/peerOrganizations/gateway10.example.com/connection-gateway10.yaml
 
 # # 网关11
 # ORG=15
