@@ -268,203 +268,203 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Gateway7OrgMSP.peer')"
 
-    - &Gateway8Org
-        Name: Gateway8OrgMSP
-        ID: Gateway8OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway8.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway8OrgMSP.admin', 'Gateway8OrgMSP.peer', 'Gateway8OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway8OrgMSP.admin', 'Gateway8OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway8OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway8OrgMSP.peer')"
+    # - &Gateway8Org
+    #     Name: Gateway8OrgMSP
+    #     ID: Gateway8OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway8.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway8OrgMSP.admin', 'Gateway8OrgMSP.peer', 'Gateway8OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway8OrgMSP.admin', 'Gateway8OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway8OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway8OrgMSP.peer')"
 
-    - &Gateway9Org
-        Name: Gateway9OrgMSP
-        ID: Gateway9OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway9.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway9OrgMSP.admin', 'Gateway9OrgMSP.peer', 'Gateway9OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway9OrgMSP.admin', 'Gateway9OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway9OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway9OrgMSP.peer')"
+    # - &Gateway9Org
+    #     Name: Gateway9OrgMSP
+    #     ID: Gateway9OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway9.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway9OrgMSP.admin', 'Gateway9OrgMSP.peer', 'Gateway9OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway9OrgMSP.admin', 'Gateway9OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway9OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway9OrgMSP.peer')"
 
-    - &Gateway10Org
-        Name: Gateway10OrgMSP
-        ID: Gateway10OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway10.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway10OrgMSP.admin', 'Gateway10OrgMSP.peer', 'Gateway10OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway10OrgMSP.admin', 'Gateway10OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway10OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway10OrgMSP.peer')"
+    # - &Gateway10Org
+    #     Name: Gateway10OrgMSP
+    #     ID: Gateway10OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway10.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway10OrgMSP.admin', 'Gateway10OrgMSP.peer', 'Gateway10OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway10OrgMSP.admin', 'Gateway10OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway10OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway10OrgMSP.peer')"
 
-    - &Gateway11Org
-        Name: Gateway11OrgMSP
-        ID: Gateway11OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway11.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway11OrgMSP.admin', 'Gateway11OrgMSP.peer', 'Gateway11OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway11OrgMSP.admin', 'Gateway11OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway11OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway11OrgMSP.peer')"
+    # - &Gateway11Org
+    #     Name: Gateway11OrgMSP
+    #     ID: Gateway11OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway11.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway11OrgMSP.admin', 'Gateway11OrgMSP.peer', 'Gateway11OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway11OrgMSP.admin', 'Gateway11OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway11OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway11OrgMSP.peer')"
 
-    - &Gateway12Org
-        Name: Gateway12OrgMSP
-        ID: Gateway12OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway12.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway12OrgMSP.admin', 'Gateway12OrgMSP.peer', 'Gateway12OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway12OrgMSP.admin', 'Gateway12OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway12OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway12OrgMSP.peer')"
+    # - &Gateway12Org
+    #     Name: Gateway12OrgMSP
+    #     ID: Gateway12OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway12.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway12OrgMSP.admin', 'Gateway12OrgMSP.peer', 'Gateway12OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway12OrgMSP.admin', 'Gateway12OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway12OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway12OrgMSP.peer')"
 
-    - &Gateway13Org
-        Name: Gateway13OrgMSP
-        ID: Gateway13OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway13.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway13OrgMSP.admin', 'Gateway13OrgMSP.peer', 'Gateway13OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway13OrgMSP.admin', 'Gateway13OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway13OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway13OrgMSP.peer')"
+    # - &Gateway13Org
+    #     Name: Gateway13OrgMSP
+    #     ID: Gateway13OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway13.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway13OrgMSP.admin', 'Gateway13OrgMSP.peer', 'Gateway13OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway13OrgMSP.admin', 'Gateway13OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway13OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway13OrgMSP.peer')"
 
-    - &Gateway14Org
-        Name: Gateway14OrgMSP
-        ID: Gateway14OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway14.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway14OrgMSP.admin', 'Gateway14OrgMSP.peer', 'Gateway14OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway14OrgMSP.admin', 'Gateway14OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway14OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway14OrgMSP.peer')"
+    # - &Gateway14Org
+    #     Name: Gateway14OrgMSP
+    #     ID: Gateway14OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway14.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway14OrgMSP.admin', 'Gateway14OrgMSP.peer', 'Gateway14OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway14OrgMSP.admin', 'Gateway14OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway14OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway14OrgMSP.peer')"
 
-    - &Gateway15Org
-        Name: Gateway15OrgMSP
-        ID: Gateway15OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway15.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway15OrgMSP.admin', 'Gateway15OrgMSP.peer', 'Gateway15OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway15OrgMSP.admin', 'Gateway15OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway15OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway15OrgMSP.peer')"
+    # - &Gateway15Org
+    #     Name: Gateway15OrgMSP
+    #     ID: Gateway15OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway15.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway15OrgMSP.admin', 'Gateway15OrgMSP.peer', 'Gateway15OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway15OrgMSP.admin', 'Gateway15OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway15OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway15OrgMSP.peer')"
 
-    - &Gateway16Org
-        Name: Gateway16OrgMSP
-        ID: Gateway16OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway16.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway16OrgMSP.admin', 'Gateway16OrgMSP.peer', 'Gateway16OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway16OrgMSP.admin', 'Gateway16OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway16OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway16OrgMSP.peer')"
+    # - &Gateway16Org
+    #     Name: Gateway16OrgMSP
+    #     ID: Gateway16OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway16.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway16OrgMSP.admin', 'Gateway16OrgMSP.peer', 'Gateway16OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway16OrgMSP.admin', 'Gateway16OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway16OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway16OrgMSP.peer')"
 
-    - &Gateway17Org
-        Name: Gateway17OrgMSP
-        ID: Gateway17OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway17.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway17OrgMSP.admin', 'Gateway17OrgMSP.peer', 'Gateway17OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway17OrgMSP.admin', 'Gateway17OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway17OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway17OrgMSP.peer')"
+    # - &Gateway17Org
+    #     Name: Gateway17OrgMSP
+    #     ID: Gateway17OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway17.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway17OrgMSP.admin', 'Gateway17OrgMSP.peer', 'Gateway17OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway17OrgMSP.admin', 'Gateway17OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway17OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway17OrgMSP.peer')"
 
-    - &Gateway18Org
-        Name: Gateway18OrgMSP
-        ID: Gateway18OrgMSP
-        MSPDir: ../organizations/peerOrganizations/gateway18.example.com/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('Gateway18OrgMSP.admin', 'Gateway18OrgMSP.peer', 'Gateway18OrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('Gateway18OrgMSP.admin', 'Gateway18OrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('Gateway18OrgMSP.admin')"
-            Endorsement:
-                Type: Signature
-                Rule: "OR('Gateway18OrgMSP.peer')"
+    # - &Gateway18Org
+    #     Name: Gateway18OrgMSP
+    #     ID: Gateway18OrgMSP
+    #     MSPDir: ../organizations/peerOrganizations/gateway18.example.com/msp
+    #     Policies:
+    #         Readers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway18OrgMSP.admin', 'Gateway18OrgMSP.peer', 'Gateway18OrgMSP.client')"
+    #         Writers:
+    #             Type: Signature
+    #             Rule: "OR('Gateway18OrgMSP.admin', 'Gateway18OrgMSP.client')"
+    #         Admins:
+    #             Type: Signature
+    #             Rule: "OR('Gateway18OrgMSP.admin')"
+    #         Endorsement:
+    #             Type: Signature
+    #             Rule: "OR('Gateway18OrgMSP.peer')"
 
 ################################################################################
 #
@@ -698,17 +698,17 @@ Profiles:
                     - *Gateway5Org
                     - *Gateway6Org
                     - *Gateway7Org
-                    - *Gateway8Org
-                    - *Gateway9Org
-                    - *Gateway10Org
-                    - *Gateway11Org
-                    - *Gateway12Org
-                    - *Gateway13Org
-                    - *Gateway14Org
-                    - *Gateway15Org
-                    - *Gateway16Org
-                    - *Gateway17Org
-                    - *Gateway18Org
+                    # - *Gateway8Org
+                    # - *Gateway9Org
+                    # - *Gateway10Org
+                    # - *Gateway11Org
+                    # - *Gateway12Org
+                    # - *Gateway13Org
+                    # - *Gateway14Org
+                    # - *Gateway15Org
+                    # - *Gateway16Org
+                    # - *Gateway17Org
+                    # - *Gateway18Org
 
     # 网关组织的全局channel
     gatewaychannel:
@@ -724,17 +724,17 @@ Profiles:
                 - *Gateway5Org
                 - *Gateway6Org
                 - *Gateway7Org
-                - *Gateway8Org
-                - *Gateway9Org
-                - *Gateway10Org
-                - *Gateway11Org
-                - *Gateway12Org
-                - *Gateway13Org
-                - *Gateway14Org
-                - *Gateway15Org
-                - *Gateway16Org
-                - *Gateway17Org
-                - *Gateway18Org
+                # - *Gateway8Org
+                # - *Gateway9Org
+                # - *Gateway10Org
+                # - *Gateway11Org
+                # - *Gateway12Org
+                # - *Gateway13Org
+                # - *Gateway14Org
+                # - *Gateway15Org
+                # - *Gateway16Org
+                # - *Gateway17Org
+                # - *Gateway18Org
             Capabilities:
                 <<: *ApplicationCapabilities
 

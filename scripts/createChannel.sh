@@ -124,28 +124,28 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     joinChannel 10
     infoln "网关7组织正在加入gatewaychannel..."
     joinChannel 11
-    infoln "网关8组织正在加入gatewaychannel..."
-    joinChannel 12
-    infoln "网关9组织正在加入gatewaychannel..."
-    joinChannel 13
-    infoln "网关10组织正在加入gatewaychannel..."
-    joinChannel 14
-    infoln "网关11组织正在加入gatewaychannel..."
-    joinChannel 15
-    infoln "网关12组织正在加入gatewaychannel..."
-    joinChannel 16
-    infoln "网关13组织正在加入gatewaychannel..."
-    joinChannel 17
-    infoln "网关14组织正在加入gatewaychannel..."
-    joinChannel 18
-    infoln "网关15组织正在加入gatewaychannel..."
-    joinChannel 19
-    infoln "网关16组织正在加入gatewaychannel..."
-    joinChannel 20
-    infoln "网关17组织正在加入gatewaychannel..."
-    joinChannel 21
-    infoln "网关18组织正在加入gatewaychannel..."
-    joinChannel 22
+    # infoln "网关8组织正在加入gatewaychannel..."
+    # joinChannel 12
+    # infoln "网关9组织正在加入gatewaychannel..."
+    # joinChannel 13
+    # infoln "网关10组织正在加入gatewaychannel..."
+    # joinChannel 14
+    # infoln "网关11组织正在加入gatewaychannel..."
+    # joinChannel 15
+    # infoln "网关12组织正在加入gatewaychannel..."
+    # joinChannel 16
+    # infoln "网关13组织正在加入gatewaychannel..."
+    # joinChannel 17
+    # infoln "网关14组织正在加入gatewaychannel..."
+    # joinChannel 18
+    # infoln "网关15组织正在加入gatewaychannel..."
+    # joinChannel 19
+    # infoln "网关16组织正在加入gatewaychannel..."
+    # joinChannel 20
+    # infoln "网关17组织正在加入gatewaychannel..."
+    # joinChannel 21
+    # infoln "网关18组织正在加入gatewaychannel..."
+    # joinChannel 22
 
     infoln "设定网关1组织的锚节点..."
     setAnchorPeer 5
@@ -161,28 +161,28 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     setAnchorPeer 10
     infoln "设定网关7组织的锚节点..."
     setAnchorPeer 11
-    infoln "设定网关8组织的锚节点..."
-    setAnchorPeer 12
-    infoln "设定网关9组织的锚节点..."
-    setAnchorPeer 13
-    infoln "设定网关10组织的锚节点..."
-    setAnchorPeer 14
-    infoln "设定网关11组织的锚节点..."
-    setAnchorPeer 15
-    infoln "设定网关12组织的锚节点..."
-    setAnchorPeer 16
-    infoln "设定网关13组织的锚节点..."
-    setAnchorPeer 17
-    infoln "设定网关14组织的锚节点..."
-    setAnchorPeer 18
-    infoln "设定网关15组织的锚节点..."
-    setAnchorPeer 19
-    infoln "设定网关16组织的锚节点..."
-    setAnchorPeer 20
-    infoln "设定网关17组织的锚节点..."
-    setAnchorPeer 21
-    infoln "设定网关18组织的锚节点..."
-    setAnchorPeer 22
+    # infoln "设定网关8组织的锚节点..."
+    # setAnchorPeer 12
+    # infoln "设定网关9组织的锚节点..."
+    # setAnchorPeer 13
+    # infoln "设定网关10组织的锚节点..."
+    # setAnchorPeer 14
+    # infoln "设定网关11组织的锚节点..."
+    # setAnchorPeer 15
+    # infoln "设定网关12组织的锚节点..."
+    # setAnchorPeer 16
+    # infoln "设定网关13组织的锚节点..."
+    # setAnchorPeer 17
+    # infoln "设定网关14组织的锚节点..."
+    # setAnchorPeer 18
+    # infoln "设定网关15组织的锚节点..."
+    # setAnchorPeer 19
+    # infoln "设定网关16组织的锚节点..."
+    # setAnchorPeer 20
+    # infoln "设定网关17组织的锚节点..."
+    # setAnchorPeer 21
+    # infoln "设定网关18组织的锚节点..."
+    # setAnchorPeer 22
 
 elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
     infoln "Joining org1 peer to the channel..."
