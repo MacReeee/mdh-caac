@@ -220,7 +220,7 @@ commitChaincodeDefinition() {
         --peerAddresses localhost:7551 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway5.example.com/peers/peer0.gateway5.example.com/tls/ca.crt \
         --peerAddresses localhost:7651 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway6.example.com/peers/peer0.gateway6.example.com/tls/ca.crt \
         --peerAddresses localhost:7751 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway7.example.com/peers/peer0.gateway7.example.com/tls/ca.crt \
-        # --peerAddresses localhost:7851 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway8.example.com/peers/peer0.gateway8.example.com/tls/ca.crt \
+        --peerAddresses localhost:7851 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway8.example.com/peers/peer0.gateway8.example.com/tls/ca.crt \
         # --peerAddresses localhost:7951 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway9.example.com/peers/peer0.gateway9.example.com/tls/ca.crt \
         # --peerAddresses localhost:8051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway10.example.com/peers/peer0.gateway10.example.com/tls/ca.crt \
         # --peerAddresses localhost:8151 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/gateway11.example.com/peers/peer0.gateway11.example.com/tls/ca.crt \
@@ -350,8 +350,8 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     installChaincode 10
     infoln "Installing chaincode on gateway7 peer..."
     installChaincode 11
-    # infoln "Installing chaincode on gateway8 peer..."
-    # installChaincode 12
+    infoln "Installing chaincode on gateway8 peer..."
+    installChaincode 12
     # infoln "Installing chaincode on gateway9 peer..."
     # installChaincode 13
     # infoln "Installing chaincode on gateway10 peer..."
@@ -382,7 +382,7 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     approveForMyOrg 9
     approveForMyOrg 10
     approveForMyOrg 11
-    # approveForMyOrg 12
+    approveForMyOrg 12
     # approveForMyOrg 13
     # approveForMyOrg 14
     # approveForMyOrg 15
@@ -414,16 +414,17 @@ if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
     # checkCommitReadiness 21 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
     # checkCommitReadiness 22 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true" "\"Gateway9OrgMSP\": true" "\"Gateway10OrgMSP\": true" "\"Gateway11OrgMSP\": true" "\"Gateway12OrgMSP\": true" "\"Gateway13OrgMSP\": true" "\"Gateway14OrgMSP\": true" "\"Gateway15OrgMSP\": true" "\"Gateway16OrgMSP\": true" "\"Gateway17OrgMSP\": true" "\"Gateway18OrgMSP\": true"
 
-    checkCommitReadiness 5  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true"
-    checkCommitReadiness 6  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" 
-    checkCommitReadiness 7  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" 
-    checkCommitReadiness 8  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" 
-    checkCommitReadiness 9  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" 
-    checkCommitReadiness 10 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true"
-    checkCommitReadiness 11 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true"
+    checkCommitReadiness 5  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true"
+    checkCommitReadiness 6  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true"
+    checkCommitReadiness 7  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true"
+    checkCommitReadiness 8  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true"
+    checkCommitReadiness 9  "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true"
+    checkCommitReadiness 10 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true"
+    checkCommitReadiness 11 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true"
+    checkCommitReadiness 12 "\"Gateway1OrgMSP\": true" "\"Gateway2OrgMSP\": true" "\"Gateway3OrgMSP\": true" "\"Gateway4OrgMSP\": true" "\"Gateway5OrgMSP\": true" "\"Gateway6OrgMSP\": true" "\"Gateway7OrgMSP\": true" "\"Gateway8OrgMSP\": true"
 
     # 更新提交命令包含所有组织
-    commitChaincodeDefinition 5 6 7 8 9 10 11
+    commitChaincodeDefinition 5 6 7 8 9 10 11 12
 
 elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
     infoln "Installing chaincode on org1 peer..."
@@ -486,7 +487,7 @@ if [ "$CC_INIT_FCN" = "NA" ]; then
   infoln "Chaincode initialization is not required"
 else
   if [ "$CHANNEL_NAME" == "gatewaychannel" ]; then
-    chaincodeInvokeInit 5 6 7 8 9 10 11
+    chaincodeInvokeInit 5 6 7 8 9 10 11 12
   elif [ "$CHANNEL_NAME" == "domain1channel" ]; then
     chaincodeInvokeInit 1 2 5
   elif [ "$CHANNEL_NAME" == "domain2channel" ]; then

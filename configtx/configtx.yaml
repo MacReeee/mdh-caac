@@ -268,23 +268,23 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Gateway7OrgMSP.peer')"
 
-    # - &Gateway8Org
-    #     Name: Gateway8OrgMSP
-    #     ID: Gateway8OrgMSP
-    #     MSPDir: ../organizations/peerOrganizations/gateway8.example.com/msp
-    #     Policies:
-    #         Readers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway8OrgMSP.admin', 'Gateway8OrgMSP.peer', 'Gateway8OrgMSP.client')"
-    #         Writers:
-    #             Type: Signature
-    #             Rule: "OR('Gateway8OrgMSP.admin', 'Gateway8OrgMSP.client')"
-    #         Admins:
-    #             Type: Signature
-    #             Rule: "OR('Gateway8OrgMSP.admin')"
-    #         Endorsement:
-    #             Type: Signature
-    #             Rule: "OR('Gateway8OrgMSP.peer')"
+    - &Gateway8Org
+        Name: Gateway8OrgMSP
+        ID: Gateway8OrgMSP
+        MSPDir: ../organizations/peerOrganizations/gateway8.example.com/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Gateway8OrgMSP.admin', 'Gateway8OrgMSP.peer', 'Gateway8OrgMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Gateway8OrgMSP.admin', 'Gateway8OrgMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Gateway8OrgMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Gateway8OrgMSP.peer')"
 
     # - &Gateway9Org
     #     Name: Gateway9OrgMSP
@@ -698,7 +698,7 @@ Profiles:
                     - *Gateway5Org
                     - *Gateway6Org
                     - *Gateway7Org
-                    # - *Gateway8Org
+                    - *Gateway8Org
                     # - *Gateway9Org
                     # - *Gateway10Org
                     # - *Gateway11Org
@@ -724,7 +724,7 @@ Profiles:
                 - *Gateway5Org
                 - *Gateway6Org
                 - *Gateway7Org
-                # - *Gateway8Org
+                - *Gateway8Org
                 # - *Gateway9Org
                 # - *Gateway10Org
                 # - *Gateway11Org
