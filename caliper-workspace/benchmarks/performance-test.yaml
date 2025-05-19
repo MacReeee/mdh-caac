@@ -1,0 +1,92 @@
+test:
+  name: Access Control Performance Test
+  description: Test system performance under different TPS
+  workers:
+    type: local
+    number: 10
+
+  rounds:
+    - label: access-tps-5
+      description: Test with TPS = 5
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: workload/performance.js
+        arguments:
+          assets: 100
+
+    - label: access-tps-10
+      description: Test with TPS = 10
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/performance.js
+        arguments:
+          assets: 100
+
+    - label: access-tps-20
+      description: Test with TPS = 20
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: workload/performance.js
+        arguments:
+          assets: 100
+
+    - label: access-tps-30
+      description: Test with TPS = 30
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 30
+      workload:
+        module: workload/performance.js
+        arguments:
+          assets: 100
+
+    - label: access-tps-40
+      description: Test with TPS = 40
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 40
+      workload:
+        module: workload/performance.js
+        arguments:
+          assets: 100
+
+    - label: access-tps-50
+      description: Test with TPS = 50
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: workload/performance.js
+        arguments:
+          assets: 100
+
+monitors:
+  resource:
+  - module: prometheus
+    options:
+      url: "http://localhost:9090"
+      metrics:
+        include: [dev-.*, couch, peer, orderer]
+        queries: []
+  transaction:
+  - module: prometheus
+    options:
+      url: "http://localhost:9090"

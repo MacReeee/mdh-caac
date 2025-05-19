@@ -16,7 +16,7 @@ echo -e "${RED}部署链码${NC}"
 ./network.sh deployCC -c domain2channel -ccn mdh -ccp ./chaincode -ccl go
 ./network.sh deployCC -c gatewaychannel -ccn mdh -ccp ./chaincode -ccl go
 
-# 配置环境变量
+# 如果需要以某个节点身份操作网络，则配置对应环境变量
 export PATH=$PATH:../bin
 export FABRIC_CFG_PATH=$PWD/../config/
 export CORE_PEER_LOCALMSPID="Org1MSP"
@@ -29,7 +29,7 @@ export ORDERER_CA=${PWD}/organizations/ordererOrganizations/example.com/orderers
 # 查询已安装链码
 peer lifecycle chaincode queryinstalled
 
-# 注册资源
+# 非必须: 注册资源
 peer chaincode invoke -o localhost:7050 \
 --ordererTLSHostnameOverride orderer.example.com \
 --tls --cafile $ORDERER_CA \
@@ -39,7 +39,7 @@ peer chaincode invoke -o localhost:7050 \
 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
 --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 
-# 查询资源
+# 非必须: 查询资源
 peer chaincode invoke -o localhost:7050 \
 --ordererTLSHostnameOverride orderer.example.com \
 --tls --cafile $ORDERER_CA \
@@ -49,7 +49,7 @@ peer chaincode invoke -o localhost:7050 \
 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
 --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 
-# 查询身份
+# 非必须: 查询身份
 peer chaincode invoke -o localhost:7050 \
 --ordererTLSHostnameOverride orderer.example.com \
 --tls --cafile $ORDERER_CA \
@@ -59,7 +59,7 @@ peer chaincode invoke -o localhost:7050 \
 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
 --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 
-# 部署规则
+# 非必须: 部署规则
 peer chaincode invoke -o localhost:7050 \
 --ordererTLSHostnameOverride orderer.example.com \
 --tls --cafile $ORDERER_CA \
@@ -69,7 +69,7 @@ peer chaincode invoke -o localhost:7050 \
 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
 --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 
-# 成功访问
+# 非必须: 成功访问
 peer chaincode invoke -o localhost:7050 \
 --ordererTLSHostnameOverride orderer.example.com \
 --tls --cafile $ORDERER_CA \
@@ -79,7 +79,7 @@ peer chaincode invoke -o localhost:7050 \
 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
 --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 
-# 失败访问
+# 非必须: 失败访问
 peer chaincode invoke -o localhost:7050 \
 --ordererTLSHostnameOverride orderer.example.com \
 --tls --cafile $ORDERER_CA \
@@ -89,18 +89,36 @@ peer chaincode invoke -o localhost:7050 \
 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
 --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
 
+
+# 以下为具体的仿真测试
 # 域内访问测试
 npx caliper launch manager \
---caliper-workspace ./ \
---caliper-networkconfig networks/fabric-network-domain1.yaml \
---caliper-benchconfig benchmarks/accessControl-test.yaml \
---caliper-flow-only-test \
---caliper-bind-sut fabric:2.5
+    --caliper-workspace ./ \
+    --caliper-networkconfig networks/fabric-network-domain1.yaml \
+    --caliper-benchconfig benchmarks/accessControl-test.yaml \
+    --caliper-flow-only-test \
+    --caliper-bind-sut fabric:2.5
 
 # 跨域访问测试
 npx caliper launch manager \
---caliper-workspace ./ \
---caliper-networkconfig networks/fabric-network-gateway.yaml \
---caliper-benchconfig benchmarks/cross-domain-test.yaml \
---caliper-flow-only-test \
---caliper-bind-sut fabric:2.5
+    --caliper-workspace ./ \
+    --caliper-networkconfig networks/fabric-network-gateway.yaml \
+    --caliper-benchconfig benchmarks/cross-domain-test.yaml \
+    --caliper-flow-only-test \
+    --caliper-bind-sut fabric:2.5
+
+# 性能测试
+npx caliper launch manager \
+    --caliper-workspace ./ \
+    --caliper-networkconfig networks/fabric-network-gateway.yaml \
+    --caliper-benchconfig benchmarks/performance-test.yaml \
+    --caliper-flow-only-test \
+    --caliper-bind-sut fabric:2.5
+
+# 批处理测试
+npx caliper launch manager \
+    --caliper-workspace ./ \
+    --caliper-networkconfig networks/fabric-network-domain1.yaml \
+    --caliper-benchconfig benchmarks/batch-test.yaml \
+    --caliper-flow-only-test \
+    --caliper-bind-sut fabric:2.5

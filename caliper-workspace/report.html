@@ -126,24 +126,18 @@
             <ul>
                 <h3>&nbspBasic information</h3>
                 <li>DLT: &nbsp<span style="font-weight: 500;">fabric</span></li>
-                <li>Name: &nbsp<span style="font-weight: 500;">Cross Domain Access Control Test</span></li>
-                <li>Description: &nbsp<span style="font-weight: 500;">Test cross domain access control system performance</span></li>
-                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">10</span></li>
+                <li>Name: &nbsp<span style="font-weight: 500;">Batch Request Test</span></li>
+                <li>Description: &nbsp<span style="font-weight: 500;">Test performance with different batch sizes</span></li>
+                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">4</span></li>
                 <li><a href="#benchmarkInfo">Details</a></li>
             </ul>
             <ul>
                 <h3>&nbspBenchmark results</h3>
                 <li><a href="#benchmarksummary">Summary</a></li>
-                    <li><a href="#cross-domain-access-01">cross-domain-access-01</a></li>
-                    <li><a href="#cross-domain-access-02">cross-domain-access-02</a></li>
-                    <li><a href="#cross-domain-access-03">cross-domain-access-03</a></li>
-                    <li><a href="#cross-domain-access-04">cross-domain-access-04</a></li>
-                    <li><a href="#cross-domain-access-05">cross-domain-access-05</a></li>
-                    <li><a href="#cross-domain-access-06">cross-domain-access-06</a></li>
-                    <li><a href="#cross-domain-access-07">cross-domain-access-07</a></li>
-                    <li><a href="#cross-domain-access-08">cross-domain-access-08</a></li>
-                    <li><a href="#cross-domain-access-09">cross-domain-access-09</a></li>
-                    <li><a href="#cross-domain-access-10">cross-domain-access-10</a></li>
+                    <li><a href="#batch-size-240">batch-size-240</a></li>
+                    <li><a href="#batch-size-400">batch-size-400</a></li>
+                    <li><a href="#batch-size-800">batch-size-800</a></li>
+                    <li><a href="#batch-size-1500">batch-size-1500</a></li>
             </ul>
             <ul>
                 <h3>&nbspSystem under test</h3>
@@ -161,356 +155,152 @@
                     </tr>
 
                     <tr>
-                         <td>cross-domain-access-01</td> <td>100</td> <td>0</td> <td>11.0</td> <td>0.28</td> <td>0.06</td> <td>0.13</td> <td>11.0</td>
+                         <td>batch-size-240</td> <td>100</td> <td>0</td> <td>132.8</td> <td>1.41</td> <td>0.19</td> <td>0.96</td> <td>59.7</td>
                     </tr>
                     <tr>
-                         <td>cross-domain-access-02</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.17</td> <td>0.08</td> <td>0.12</td> <td>11.0</td>
+                         <td>batch-size-400</td> <td>100</td> <td>0</td> <td>201.6</td> <td>1.41</td> <td>0.30</td> <td>1.05</td> <td>62.4</td>
                     </tr>
                     <tr>
-                         <td>cross-domain-access-03</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.13</td> <td>0.07</td> <td>0.10</td> <td>11.0</td>
+                         <td>batch-size-800</td> <td>100</td> <td>0</td> <td>235.3</td> <td>1.40</td> <td>0.25</td> <td>1.01</td> <td>66.4</td>
                     </tr>
                     <tr>
-                         <td>cross-domain-access-04</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.15</td> <td>0.05</td> <td>0.10</td> <td>11.0</td>
-                    </tr>
-                    <tr>
-                         <td>cross-domain-access-05</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.14</td> <td>0.07</td> <td>0.10</td> <td>11.0</td>
-                    </tr>
-                    <tr>
-                         <td>cross-domain-access-06</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.14</td> <td>0.07</td> <td>0.10</td> <td>11.0</td>
-                    </tr>
-                    <tr>
-                         <td>cross-domain-access-07</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.15</td> <td>0.07</td> <td>0.10</td> <td>11.0</td>
-                    </tr>
-                    <tr>
-                         <td>cross-domain-access-08</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.15</td> <td>0.08</td> <td>0.11</td> <td>11.0</td>
-                    </tr>
-                    <tr>
-                         <td>cross-domain-access-09</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.14</td> <td>0.07</td> <td>0.10</td> <td>10.9</td>
-                    </tr>
-                    <tr>
-                         <td>cross-domain-access-10</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.15</td> <td>0.06</td> <td>0.10</td> <td>11.0</td>
+                         <td>batch-size-1500</td> <td>100</td> <td>0</td> <td>243.3</td> <td>1.37</td> <td>0.28</td> <td>0.94</td> <td>67.5</td>
                     </tr>
                 </table>
             </div>
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-01">
-                <h2>Benchmark round: cross-domain-access-01</h2>
-                <p>Test cross domain access request</p>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="batch-size-240">
+                <h2>Benchmark round: batch-size-240</h2>
+                <p>240 requests per transaction</p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 10
+    tps: 240
 </pre>
-                        <h3>Performance metrics for cross-domain-access-01</h3>
+                        <h3>Performance metrics for batch-size-240</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>cross-domain-access-01</td> <td>100</td> <td>0</td> <td>11.0</td> <td>0.28</td> <td>0.06</td> <td>0.13</td> <td>11.0</td>
+                                     <td>batch-size-240</td> <td>100</td> <td>0</td> <td>132.8</td> <td>1.41</td> <td>0.19</td> <td>0.96</td> <td>59.7</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for cross-domain-access-01</h3>
+                        <h3>Resource utilization for batch-size-240</h3>
             </div>
 
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-02">
-                <h2>Benchmark round: cross-domain-access-02</h2>
-                <p>Test cross domain access request</p>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="batch-size-400">
+                <h2>Benchmark round: batch-size-400</h2>
+                <p>400 requests per transaction</p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 10
+    tps: 400
 </pre>
-                        <h3>Performance metrics for cross-domain-access-02</h3>
+                        <h3>Performance metrics for batch-size-400</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>cross-domain-access-02</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.17</td> <td>0.08</td> <td>0.12</td> <td>11.0</td>
+                                     <td>batch-size-400</td> <td>100</td> <td>0</td> <td>201.6</td> <td>1.41</td> <td>0.30</td> <td>1.05</td> <td>62.4</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for cross-domain-access-02</h3>
+                        <h3>Resource utilization for batch-size-400</h3>
             </div>
 
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-03">
-                <h2>Benchmark round: cross-domain-access-03</h2>
-                <p>Test cross domain access request</p>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="batch-size-800">
+                <h2>Benchmark round: batch-size-800</h2>
+                <p>800 requests per transaction</p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 10
+    tps: 800
 </pre>
-                        <h3>Performance metrics for cross-domain-access-03</h3>
+                        <h3>Performance metrics for batch-size-800</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>cross-domain-access-03</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.13</td> <td>0.07</td> <td>0.10</td> <td>11.0</td>
+                                     <td>batch-size-800</td> <td>100</td> <td>0</td> <td>235.3</td> <td>1.40</td> <td>0.25</td> <td>1.01</td> <td>66.4</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for cross-domain-access-03</h3>
+                        <h3>Resource utilization for batch-size-800</h3>
             </div>
 
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-04">
-                <h2>Benchmark round: cross-domain-access-04</h2>
-                <p>Test cross domain access request</p>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="batch-size-1500">
+                <h2>Benchmark round: batch-size-1500</h2>
+                <p>1500 requests per transaction</p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
   type: fixed-rate
   opts:
-    tps: 10
+    tps: 1500
 </pre>
-                        <h3>Performance metrics for cross-domain-access-04</h3>
+                        <h3>Performance metrics for batch-size-1500</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>cross-domain-access-04</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.15</td> <td>0.05</td> <td>0.10</td> <td>11.0</td>
+                                     <td>batch-size-1500</td> <td>100</td> <td>0</td> <td>243.3</td> <td>1.37</td> <td>0.28</td> <td>0.94</td> <td>67.5</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for cross-domain-access-04</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-05">
-                <h2>Benchmark round: cross-domain-access-05</h2>
-                <p>Test cross domain access request</p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 10
-</pre>
-                        <h3>Performance metrics for cross-domain-access-05</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>cross-domain-access-05</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.14</td> <td>0.07</td> <td>0.10</td> <td>11.0</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for cross-domain-access-05</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-06">
-                <h2>Benchmark round: cross-domain-access-06</h2>
-                <p>Test cross domain access request</p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 10
-</pre>
-                        <h3>Performance metrics for cross-domain-access-06</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>cross-domain-access-06</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.14</td> <td>0.07</td> <td>0.10</td> <td>11.0</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for cross-domain-access-06</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-07">
-                <h2>Benchmark round: cross-domain-access-07</h2>
-                <p>Test cross domain access request</p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 10
-</pre>
-                        <h3>Performance metrics for cross-domain-access-07</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>cross-domain-access-07</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.15</td> <td>0.07</td> <td>0.10</td> <td>11.0</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for cross-domain-access-07</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-08">
-                <h2>Benchmark round: cross-domain-access-08</h2>
-                <p>Test cross domain access request</p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 10
-</pre>
-                        <h3>Performance metrics for cross-domain-access-08</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>cross-domain-access-08</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.15</td> <td>0.08</td> <td>0.11</td> <td>11.0</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for cross-domain-access-08</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-09">
-                <h2>Benchmark round: cross-domain-access-09</h2>
-                <p>Test cross domain access request</p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 10
-</pre>
-                        <h3>Performance metrics for cross-domain-access-09</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>cross-domain-access-09</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.14</td> <td>0.07</td> <td>0.10</td> <td>10.9</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for cross-domain-access-09</h3>
-            </div>
-
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="cross-domain-access-10">
-                <h2>Benchmark round: cross-domain-access-10</h2>
-                <p>Test cross domain access request</p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-rate
-  opts:
-    tps: 10
-</pre>
-                        <h3>Performance metrics for cross-domain-access-10</h3>
-                            <table style="min-width: 100%;">
-                                <tr>
-                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
-                                </tr>
-                                <tr>
-                                     <td>cross-domain-access-10</td> <td>100</td> <td>0</td> <td>11.1</td> <td>0.15</td> <td>0.06</td> <td>0.10</td> <td>11.0</td>
-                                </tr>
-                            </table>
-                        <h3>Resource utilization for cross-domain-access-10</h3>
+                        <h3>Resource utilization for batch-size-1500</h3>
             </div>
 
             <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;">
                 <h2>Test Environment</h2>
                 <h3>benchmark config</h3>
-                <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">name: Cross Domain Access Control Test
-description: Test cross domain access control system performance
+                <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">name: Batch Request Test
+description: Test performance with different batch sizes
 workers:
   type: local
-  number: 10
+  number: 5
 rounds:
-  - label: cross-domain-access-01
-    description: Test cross domain access request
+  - label: batch-size-240
+    description: 240 requests per transaction
     txNumber: 100
     rateControl:
       type: fixed-rate
       opts:
-        tps: 10
+        tps: 240
     workload:
-      module: workload&#x2F;cross-access.js
+      module: workload&#x2F;batch-request.js
       arguments:
-        assets: 100
-  - label: cross-domain-access-02
-    description: Test cross domain access request
+        batchSize: 240
+  - label: batch-size-400
+    description: 400 requests per transaction
     txNumber: 100
     rateControl:
       type: fixed-rate
       opts:
-        tps: 10
+        tps: 400
     workload:
-      module: workload&#x2F;cross-access.js
+      module: workload&#x2F;batch-request.js
       arguments:
-        assets: 100
-  - label: cross-domain-access-03
-    description: Test cross domain access request
+        batchSize: 400
+  - label: batch-size-800
+    description: 800 requests per transaction
     txNumber: 100
     rateControl:
       type: fixed-rate
       opts:
-        tps: 10
+        tps: 800
     workload:
-      module: workload&#x2F;cross-access.js
+      module: workload&#x2F;batch-request.js
       arguments:
-        assets: 100
-  - label: cross-domain-access-04
-    description: Test cross domain access request
+        batchSize: 800
+  - label: batch-size-1500
+    description: 1500 requests per transaction
     txNumber: 100
     rateControl:
       type: fixed-rate
       opts:
-        tps: 10
+        tps: 1500
     workload:
-      module: workload&#x2F;cross-access.js
+      module: workload&#x2F;batch-request.js
       arguments:
-        assets: 100
-  - label: cross-domain-access-05
-    description: Test cross domain access request
-    txNumber: 100
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 10
-    workload:
-      module: workload&#x2F;cross-access.js
-      arguments:
-        assets: 100
-  - label: cross-domain-access-06
-    description: Test cross domain access request
-    txNumber: 100
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 10
-    workload:
-      module: workload&#x2F;cross-access.js
-      arguments:
-        assets: 100
-  - label: cross-domain-access-07
-    description: Test cross domain access request
-    txNumber: 100
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 10
-    workload:
-      module: workload&#x2F;cross-access.js
-      arguments:
-        assets: 100
-  - label: cross-domain-access-08
-    description: Test cross domain access request
-    txNumber: 100
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 10
-    workload:
-      module: workload&#x2F;cross-access.js
-      arguments:
-        assets: 100
-  - label: cross-domain-access-09
-    description: Test cross domain access request
-    txNumber: 100
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 10
-    workload:
-      module: workload&#x2F;cross-access.js
-      arguments:
-        assets: 100
-  - label: cross-domain-access-10
-    description: Test cross domain access request
-    txNumber: 100
-    rateControl:
-      type: fixed-rate
-      opts:
-        tps: 10
-    workload:
-      module: workload&#x2F;cross-access.js
-      arguments:
-        assets: 100
+        batchSize: 1500
 </pre>
                 <h3>SUT</h3>
                 <pre id="sutdetails">not provided</pre>

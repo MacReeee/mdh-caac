@@ -1,0 +1,919 @@
+2025.02.23-12:06:09.514[32m info [39m [caliper] [cli-launch-manager] 	Binding specification is present, performing binding for "fabric:2.5"
+2025.02.23-12:06:09.517[33m warn [39m [caliper] [bind] 	Working directory is not specified. Current path: "/home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace"
+2025.02.23-12:06:09.517[32m info [39m [caliper] [bind] 	Binding for fabric@2.5. This might take some time...
+2025.02.23-12:06:09.517[32m info [39m [caliper] [bind] 	Using working directory: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:06:09.517[32m info [39m [caliper] [bind] 	Calling npm with: install @hyperledger/fabric-gateway@1.5.0 @grpc/grpc-js@1.10.3
+
+up to date in 2s
+
+11 packages are looking for funding
+  run `npm fund` for details
+2025.02.23-12:06:11.453[32m info [39m [caliper] [cli-launch-manager] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:06:11.453[32m info [39m [caliper] [cli-launch-manager] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:06:11.454[32m info [39m [caliper] [cli-launch-manager] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:06:11.454[32m info [39m [caliper] [cli-launch-manager] 	Set SUT type: fabric
+2025.02.23-12:06:11.460[32m info [39m [caliper] [benchmark-validator] 	No observer specified, will default to `none`
+2025.02.23-12:06:11.461[32m info [39m [caliper] [caliper-engine] 	Starting benchmark flow
+2025.02.23-12:06:11.461[32m info [39m [caliper] [caliper-engine] 	Skipping start commands due to benchmark flow conditioning
+2025.02.23-12:06:11.461[32m info [39m [caliper] [caliper-engine] 	Skipping initialization phase due to benchmark flow conditioning
+2025.02.23-12:06:11.461[32m info [39m [caliper] [caliper-engine] 	Skipping install smart contract phase due to benchmark flow conditioning
+2025.02.23-12:06:11.986[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:06:11.994[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:06:11.996[32m info [39m [caliper] [monitor.js] 	Attempting to create resource monitor of type prometheus
+2025.02.23-12:06:11.998[32m info [39m [caliper] [default-observer] 	Observer interval set to 5000 milliseconds
+2025.02.23-12:06:12.001[32m info [39m [caliper] [round-orchestrator] 	Preparing worker connections
+2025.02.23-12:06:12.001[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 1 of 5
+2025.02.23-12:06:12.005[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 2 of 5
+2025.02.23-12:06:12.008[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 3 of 5
+2025.02.23-12:06:12.010[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 4 of 5
+2025.02.23-12:06:12.014[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 5 of 5
+2025.02.23-12:06:12.020[32m info [39m [caliper] [worker-orchestrator] 	Messenger not configured, entering configure phase...
+2025.02.23-12:06:12.020[32m info [39m [caliper] [worker-orchestrator] 	No existing workers detected, entering worker launch phase...
+2025.02.23-12:06:12.021[32m info [39m [caliper] [worker-orchestrator] 	Waiting for 5 workers to be connected...
+2025.02.23-12:06:12.409[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:06:12.411[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:06:12.411[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:06:12.411[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:06:12.411[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:06:12.427[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:06:12.428[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:06:12.429[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:06:12.429[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:06:12.429[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:06:12.530[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:06:12.531[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:06:12.532[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:06:12.532[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:06:12.532[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:06:12.615[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:06:12.616[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:06:12.616[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:06:12.616[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:06:12.617[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:06:12.648[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:06:12.649[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:06:12.650[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:06:12.650[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:06:12.651[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:06:12.679[32m info [39m [caliper] [worker-orchestrator] 	5 workers connected, progressing to worker assignment phase.
+2025.02.23-12:06:12.679[32m info [39m [caliper] [worker-orchestrator] 	Workers currently unassigned, awaiting index assignment...
+2025.02.23-12:06:12.682[32m info [39m [caliper] [worker-orchestrator] 	Waiting for 5 workers to be assigned...
+2025.02.23-12:06:12.711[32m info [39m [caliper] [worker-orchestrator] 	5 workers assigned, progressing to worker initialization phase.
+2025.02.23-12:06:12.711[32m info [39m [caliper] [worker-orchestrator] 	Waiting for 5 workers to be ready...
+2025.02.23-12:06:12.713[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#0...
+2025.02.23-12:06:12.713[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#1...
+2025.02.23-12:06:12.715[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#3...
+2025.02.23-12:06:12.715[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#4...
+2025.02.23-12:06:12.715[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#2...
+2025.02.23-12:06:13.535[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:06:13.548[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:06:13.592[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:06:13.605[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:06:13.636[32m info [39m [caliper] [worker-message-handler] 	Worker#3 initialized
+2025.02.23-12:06:13.689[32m info [39m [caliper] [worker-message-handler] 	Worker#0 initialized
+2025.02.23-12:06:13.690[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:06:13.697[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:06:13.741[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:06:13.749[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:06:13.763[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:06:13.775[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:06:13.787[32m info [39m [caliper] [worker-message-handler] 	Worker#4 initialized
+2025.02.23-12:06:13.817[32m info [39m [caliper] [worker-message-handler] 	Worker#1 initialized
+2025.02.23-12:06:13.851[32m info [39m [caliper] [worker-message-handler] 	Worker#2 initialized
+2025.02.23-12:06:13.852[32m info [39m [caliper] [worker-orchestrator] 	5 workers ready, progressing to test preparation phase.
+2025.02.23-12:06:13.853[32m info [39m [caliper] [round-orchestrator] 	Started round 1 (batch-size-240)
+2025.02.23-12:06:13.855[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#0
+2025.02.23-12:06:13.856[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#0
+2025.02.23-12:06:13.856[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#4 for Round#0
+2025.02.23-12:06:13.858[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#0
+2025.02.23-12:06:13.861[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#0
+2025.02.23-12:06:14.099[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:14.117[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 0 is starting...
+2025.02.23-12:06:14.126[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:14.127[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 0 is starting...
+2025.02.23-12:06:14.197[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:14.197[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 0 is starting...
+2025.02.23-12:06:14.266[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:14.266[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 0 is starting...
+2025.02.23-12:06:14.278[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:14.278[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 0 is starting...
+2025.02.23-12:06:14.331[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_0","type":"document","description":"并发测试资源 0"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_0
+2025.02.23-12:06:14.343[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_1","type":"document","description":"并发测试资源 1"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_1
+2025.02.23-12:06:14.352[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_2","type":"document","description":"并发测试资源 2"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_2
+2025.02.23-12:06:14.360[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_3","type":"document","description":"并发测试资源 3"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_3
+2025.02.23-12:06:14.370[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_4","type":"document","description":"并发测试资源 4"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_4
+2025.02.23-12:06:14.378[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_5","type":"document","description":"并发测试资源 5"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_5
+2025.02.23-12:06:14.386[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_6","type":"document","description":"并发测试资源 6"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_6
+2025.02.23-12:06:14.394[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_7","type":"document","description":"并发测试资源 7"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_7
+2025.02.23-12:06:14.404[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_8","type":"document","description":"并发测试资源 8"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_8
+2025.02.23-12:06:14.414[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_9","type":"document","description":"并发测试资源 9"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_9
+2025.02.23-12:06:14.421[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [DeployRule] using arguments [{"rule_id":"concurrent_rule001","priority":1,"effect":"ALLOW","subject_constraints":{"authorized_addresses":["test_address"],"required_roles":[]},"resource_constraints":{"resource_ids":["concurrent_resource_0","concurrent_resource_1","concurrent_resource_2","concurrent_resource_3","concurrent_resource_4","concurrent_resource_5","concurrent_resource_6","concurrent_resource_7","concurrent_resource_8","concurrent_resource_9"]},"context_constraints":{"historic_constraints":{"required_trust_score":0},"time_constraints":{"start_time":0,"end_time":1735660800},"location_constraints":{"x_coordinate":0,"y_coordinate":0,"radius":10000}},"data_operations":[0,1,2]}],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 规则冲突: 规则ID已存在
+2025.02.23-12:06:17.424[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:17.425[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:17.425[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 0 is completed
+2025.02.23-12:06:17.426[32m info [39m [caliper] [worker-message-handler] 	Worker#0 prepared for Round#0
+2025.02.23-12:06:19.124[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:19.124[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:19.125[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 0 is completed
+2025.02.23-12:06:19.125[32m info [39m [caliper] [worker-message-handler] 	Worker#4 prepared for Round#0
+2025.02.23-12:06:19.134[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:19.135[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:19.136[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 0 is completed
+2025.02.23-12:06:19.136[32m info [39m [caliper] [worker-message-handler] 	Worker#2 prepared for Round#0
+2025.02.23-12:06:19.209[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:19.210[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:19.211[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 0 is completed
+2025.02.23-12:06:19.211[32m info [39m [caliper] [worker-message-handler] 	Worker#3 prepared for Round#0
+2025.02.23-12:06:19.273[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:19.274[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:19.275[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 0 is completed
+2025.02.23-12:06:19.275[32m info [39m [caliper] [worker-message-handler] 	Worker#1 prepared for Round#0
+2025.02.23-12:06:19.276[32m info [39m [caliper] [worker-orchestrator] 	5 workers prepared, progressing to test phase.
+2025.02.23-12:06:19.276[32m info [39m [caliper] [round-orchestrator] 	Monitors successfully started
+2025.02.23-12:06:19.280[32m info [39m [caliper] [worker-message-handler] 	Worker#1 is starting Round#0
+2025.02.23-12:06:19.280[32m info [39m [caliper] [worker-message-handler] 	Worker#2 is starting Round#0
+2025.02.23-12:06:19.280[32m info [39m [caliper] [worker-message-handler] 	Worker#3 is starting Round#0
+2025.02.23-12:06:19.281[32m info [39m [caliper] [worker-message-handler] 	Worker#4 is starting Round#0
+2025.02.23-12:06:19.282[32m info [39m [caliper] [worker-message-handler] 	Worker#0 is starting Round#0
+2025.02.23-12:06:19.287[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:19.289[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:19.289[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:19.291[32m info [39m [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2025.02.23-12:06:19.292[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:19.292[32m info [39m [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2025.02.23-12:06:19.294[32m info [39m [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2025.02.23-12:06:19.294[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:19.296[32m info [39m [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2025.02.23-12:06:19.302[32m info [39m [caliper] [caliper-worker] 	Worker #4 starting workload loop
+2025.02.23-12:06:21.758[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:21.758[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:21.759[32m info [39m [caliper] [worker-message-handler] 	Worker#0 finished Round#0
+2025.02.23-12:06:21.868[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:21.869[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:21.869[32m info [39m [caliper] [worker-message-handler] 	Worker#1 finished Round#0
+2025.02.23-12:06:21.967[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:21.967[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:21.967[32m info [39m [caliper] [worker-message-handler] 	Worker#4 finished Round#0
+2025.02.23-12:06:22.055[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:22.056[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:22.056[32m info [39m [caliper] [worker-message-handler] 	Worker#3 finished Round#0
+2025.02.23-12:06:22.065[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:22.066[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:22.066[32m info [39m [caliper] [worker-message-handler] 	Worker#2 finished Round#0
+2025.02.23-12:06:27.082[32m info [39m [caliper] [default-observer] 	Resetting txCount indicator count
+2025.02.23-12:06:27.083[32m info [39m [caliper] [report-builder] 	### Test result ###
+2025.02.23-12:06:27.088[32m info [39m [caliper] [report-builder] 	
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name           | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-240 | 100  | 0    | 132.8           | 1.41            | 0.19            | 0.96            | 59.7             |
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2025.02.23-12:06:27.089[32m info [39m [caliper] [round-orchestrator] 	Finished round 1 (batch-size-240) in 1.773 seconds
+2025.02.23-12:06:27.089[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2025.02.23-12:06:27.089[32m info [39m [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2025.02.23-12:06:32.094[32m info [39m [caliper] [round-orchestrator] 	Started round 2 (batch-size-400)
+2025.02.23-12:06:32.096[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#1
+2025.02.23-12:06:32.097[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#1
+2025.02.23-12:06:32.099[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#1
+2025.02.23-12:06:32.101[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#1
+2025.02.23-12:06:32.103[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#4 for Round#1
+2025.02.23-12:06:32.106[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:32.107[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 1 is starting...
+2025.02.23-12:06:32.107[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:32.107[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:32.107[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 1 is starting...
+2025.02.23-12:06:32.108[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 1 is starting...
+2025.02.23-12:06:32.108[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:32.108[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 1 is starting...
+2025.02.23-12:06:32.111[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:32.111[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 1 is starting...
+2025.02.23-12:06:32.126[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_0","type":"document","description":"并发测试资源 0"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_0
+2025.02.23-12:06:32.132[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_1","type":"document","description":"并发测试资源 1"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_1
+2025.02.23-12:06:32.138[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_2","type":"document","description":"并发测试资源 2"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_2
+2025.02.23-12:06:32.144[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_3","type":"document","description":"并发测试资源 3"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_3
+2025.02.23-12:06:32.150[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_4","type":"document","description":"并发测试资源 4"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_4
+2025.02.23-12:06:32.157[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_5","type":"document","description":"并发测试资源 5"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_5
+2025.02.23-12:06:32.165[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_6","type":"document","description":"并发测试资源 6"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_6
+2025.02.23-12:06:32.172[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_7","type":"document","description":"并发测试资源 7"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_7
+2025.02.23-12:06:32.179[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_8","type":"document","description":"并发测试资源 8"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_8
+2025.02.23-12:06:32.185[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_9","type":"document","description":"并发测试资源 9"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_9
+2025.02.23-12:06:32.191[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [DeployRule] using arguments [{"rule_id":"concurrent_rule001","priority":1,"effect":"ALLOW","subject_constraints":{"authorized_addresses":["test_address"],"required_roles":[]},"resource_constraints":{"resource_ids":["concurrent_resource_0","concurrent_resource_1","concurrent_resource_2","concurrent_resource_3","concurrent_resource_4","concurrent_resource_5","concurrent_resource_6","concurrent_resource_7","concurrent_resource_8","concurrent_resource_9"]},"context_constraints":{"historic_constraints":{"required_trust_score":0},"time_constraints":{"start_time":0,"end_time":1735660800},"location_constraints":{"x_coordinate":0,"y_coordinate":0,"radius":10000}},"data_operations":[0,1,2]}],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 规则冲突: 规则ID已存在
+2025.02.23-12:06:35.194[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:35.194[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:35.194[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 1 is completed
+2025.02.23-12:06:35.195[32m info [39m [caliper] [worker-message-handler] 	Worker#0 prepared for Round#1
+2025.02.23-12:06:37.109[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:37.109[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:37.109[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:37.110[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:37.110[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 1 is completed
+2025.02.23-12:06:37.109[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 1 is completed
+2025.02.23-12:06:37.110[32m info [39m [caliper] [worker-message-handler] 	Worker#2 prepared for Round#1
+2025.02.23-12:06:37.110[32m info [39m [caliper] [worker-message-handler] 	Worker#1 prepared for Round#1
+2025.02.23-12:06:37.111[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:37.112[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:37.112[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 1 is completed
+2025.02.23-12:06:37.112[32m info [39m [caliper] [worker-message-handler] 	Worker#4 prepared for Round#1
+2025.02.23-12:06:37.113[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:37.113[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:37.114[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 1 is completed
+2025.02.23-12:06:37.114[32m info [39m [caliper] [worker-message-handler] 	Worker#3 prepared for Round#1
+2025.02.23-12:06:37.115[32m info [39m [caliper] [worker-orchestrator] 	5 workers prepared, progressing to test phase.
+2025.02.23-12:06:37.115[32m info [39m [caliper] [round-orchestrator] 	Monitors successfully started
+2025.02.23-12:06:37.116[32m info [39m [caliper] [worker-message-handler] 	Worker#0 is starting Round#1
+2025.02.23-12:06:37.117[32m info [39m [caliper] [worker-message-handler] 	Worker#1 is starting Round#1
+2025.02.23-12:06:37.119[32m info [39m [caliper] [worker-message-handler] 	Worker#4 is starting Round#1
+2025.02.23-12:06:37.121[32m info [39m [caliper] [worker-message-handler] 	Worker#3 is starting Round#1
+2025.02.23-12:06:37.121[32m info [39m [caliper] [worker-message-handler] 	Worker#2 is starting Round#1
+2025.02.23-12:06:37.124[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:37.125[32m info [39m [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2025.02.23-12:06:37.129[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:37.130[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:37.130[32m info [39m [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2025.02.23-12:06:37.131[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:37.131[32m info [39m [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2025.02.23-12:06:37.131[32m info [39m [caliper] [caliper-worker] 	Worker #4 starting workload loop
+2025.02.23-12:06:37.133[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:37.134[32m info [39m [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2025.02.23-12:06:39.643[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:39.643[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:39.643[32m info [39m [caliper] [worker-message-handler] 	Worker#2 finished Round#1
+2025.02.23-12:06:39.690[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:39.690[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:39.691[32m info [39m [caliper] [worker-message-handler] 	Worker#1 finished Round#1
+2025.02.23-12:06:39.734[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:39.734[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:39.734[32m info [39m [caliper] [worker-message-handler] 	Worker#4 finished Round#1
+2025.02.23-12:06:39.751[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:39.751[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:39.751[32m info [39m [caliper] [worker-message-handler] 	Worker#0 finished Round#1
+2025.02.23-12:06:39.786[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:39.786[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:39.786[32m info [39m [caliper] [worker-message-handler] 	Worker#3 finished Round#1
+2025.02.23-12:06:44.791[32m info [39m [caliper] [default-observer] 	Resetting txCount indicator count
+2025.02.23-12:06:44.791[32m info [39m [caliper] [report-builder] 	### Test result ###
+2025.02.23-12:06:44.792[32m info [39m [caliper] [report-builder] 	
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name           | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-400 | 100  | 0    | 201.6           | 1.41            | 0.30            | 1.05            | 62.4             |
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2025.02.23-12:06:44.793[32m info [39m [caliper] [round-orchestrator] 	Finished round 2 (batch-size-400) in 1.66 seconds
+2025.02.23-12:06:44.793[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2025.02.23-12:06:44.793[32m info [39m [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2025.02.23-12:06:49.797[32m info [39m [caliper] [round-orchestrator] 	Started round 3 (batch-size-800)
+2025.02.23-12:06:49.798[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#2
+2025.02.23-12:06:49.800[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#2
+2025.02.23-12:06:49.801[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#2
+2025.02.23-12:06:49.801[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#4 for Round#2
+2025.02.23-12:06:49.806[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#2
+2025.02.23-12:06:49.806[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:49.806[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:49.807[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 2 is starting...
+2025.02.23-12:06:49.807[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 2 is starting...
+2025.02.23-12:06:49.815[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:49.815[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 2 is starting...
+2025.02.23-12:06:49.815[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:49.816[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 2 is starting...
+2025.02.23-12:06:49.819[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:49.819[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 2 is starting...
+2025.02.23-12:06:49.825[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_0","type":"document","description":"并发测试资源 0"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_0
+2025.02.23-12:06:49.831[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_1","type":"document","description":"并发测试资源 1"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_1
+2025.02.23-12:06:49.839[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_2","type":"document","description":"并发测试资源 2"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_2
+2025.02.23-12:06:49.845[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_3","type":"document","description":"并发测试资源 3"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_3
+2025.02.23-12:06:49.852[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_4","type":"document","description":"并发测试资源 4"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_4
+2025.02.23-12:06:49.858[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_5","type":"document","description":"并发测试资源 5"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_5
+2025.02.23-12:06:49.865[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_6","type":"document","description":"并发测试资源 6"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_6
+2025.02.23-12:06:49.870[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_7","type":"document","description":"并发测试资源 7"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_7
+2025.02.23-12:06:49.876[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_8","type":"document","description":"并发测试资源 8"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_8
+2025.02.23-12:06:49.883[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_9","type":"document","description":"并发测试资源 9"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_9
+2025.02.23-12:06:49.892[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [DeployRule] using arguments [{"rule_id":"concurrent_rule001","priority":1,"effect":"ALLOW","subject_constraints":{"authorized_addresses":["test_address"],"required_roles":[]},"resource_constraints":{"resource_ids":["concurrent_resource_0","concurrent_resource_1","concurrent_resource_2","concurrent_resource_3","concurrent_resource_4","concurrent_resource_5","concurrent_resource_6","concurrent_resource_7","concurrent_resource_8","concurrent_resource_9"]},"context_constraints":{"historic_constraints":{"required_trust_score":0},"time_constraints":{"start_time":0,"end_time":1735660800},"location_constraints":{"x_coordinate":0,"y_coordinate":0,"radius":10000}},"data_operations":[0,1,2]}],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 规则冲突: 规则ID已存在
+2025.02.23-12:06:52.895[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:52.895[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:52.896[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 2 is completed
+2025.02.23-12:06:52.896[32m info [39m [caliper] [worker-message-handler] 	Worker#0 prepared for Round#2
+2025.02.23-12:06:54.810[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:54.811[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:54.811[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 2 is completed
+2025.02.23-12:06:54.811[32m info [39m [caliper] [worker-message-handler] 	Worker#3 prepared for Round#2
+2025.02.23-12:06:54.819[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:54.819[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:54.819[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:54.819[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:54.819[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 2 is completed
+2025.02.23-12:06:54.819[32m info [39m [caliper] [worker-message-handler] 	Worker#2 prepared for Round#2
+2025.02.23-12:06:54.819[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 2 is completed
+2025.02.23-12:06:54.820[32m info [39m [caliper] [worker-message-handler] 	Worker#4 prepared for Round#2
+2025.02.23-12:06:54.822[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:54.823[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:54.823[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 2 is completed
+2025.02.23-12:06:54.823[32m info [39m [caliper] [worker-message-handler] 	Worker#1 prepared for Round#2
+2025.02.23-12:06:54.824[32m info [39m [caliper] [worker-orchestrator] 	5 workers prepared, progressing to test phase.
+2025.02.23-12:06:54.824[32m info [39m [caliper] [round-orchestrator] 	Monitors successfully started
+2025.02.23-12:06:54.825[32m info [39m [caliper] [worker-message-handler] 	Worker#0 is starting Round#2
+2025.02.23-12:06:54.826[32m info [39m [caliper] [worker-message-handler] 	Worker#1 is starting Round#2
+2025.02.23-12:06:54.826[32m info [39m [caliper] [worker-message-handler] 	Worker#2 is starting Round#2
+2025.02.23-12:06:54.827[32m info [39m [caliper] [worker-message-handler] 	Worker#4 is starting Round#2
+2025.02.23-12:06:54.827[32m info [39m [caliper] [worker-message-handler] 	Worker#3 is starting Round#2
+2025.02.23-12:06:54.830[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:54.830[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:54.830[32m info [39m [caliper] [caliper-worker] 	Worker #4 starting workload loop
+2025.02.23-12:06:54.831[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:54.832[32m info [39m [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2025.02.23-12:06:54.833[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:54.834[32m info [39m [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2025.02.23-12:06:54.835[32m info [39m [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2025.02.23-12:06:54.833[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:06:54.837[32m info [39m [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2025.02.23-12:06:57.288[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:57.288[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:57.289[32m info [39m [caliper] [worker-message-handler] 	Worker#3 finished Round#2
+2025.02.23-12:06:57.290[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:57.291[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:57.291[32m info [39m [caliper] [worker-message-handler] 	Worker#4 finished Round#2
+2025.02.23-12:06:57.323[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:57.323[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:57.323[32m info [39m [caliper] [worker-message-handler] 	Worker#1 finished Round#2
+2025.02.23-12:06:57.346[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:57.346[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:57.347[32m info [39m [caliper] [worker-message-handler] 	Worker#2 finished Round#2
+2025.02.23-12:06:57.382[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:06:57.382[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:06:57.382[32m info [39m [caliper] [worker-message-handler] 	Worker#0 finished Round#2
+2025.02.23-12:07:02.386[32m info [39m [caliper] [default-observer] 	Resetting txCount indicator count
+2025.02.23-12:07:02.387[32m info [39m [caliper] [report-builder] 	### Test result ###
+2025.02.23-12:07:02.388[32m info [39m [caliper] [report-builder] 	
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name           | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-800 | 100  | 0    | 235.3           | 1.40            | 0.25            | 1.01            | 66.4             |
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2025.02.23-12:07:02.388[32m info [39m [caliper] [round-orchestrator] 	Finished round 3 (batch-size-800) in 1.55 seconds
+2025.02.23-12:07:02.389[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2025.02.23-12:07:02.389[32m info [39m [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2025.02.23-12:07:07.392[32m info [39m [caliper] [round-orchestrator] 	Started round 4 (batch-size-1500)
+2025.02.23-12:07:07.393[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#3
+2025.02.23-12:07:07.394[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#3
+2025.02.23-12:07:07.395[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#4 for Round#3
+2025.02.23-12:07:07.395[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#3
+2025.02.23-12:07:07.396[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#3
+2025.02.23-12:07:07.399[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:07.399[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 3 is starting...
+2025.02.23-12:07:07.400[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:07.400[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:07.400[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 3 is starting...
+2025.02.23-12:07:07.401[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 3 is starting...
+2025.02.23-12:07:07.402[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:07.403[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 3 is starting...
+2025.02.23-12:07:07.404[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:07.404[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 3 is starting...
+2025.02.23-12:07:07.413[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_0","type":"document","description":"并发测试资源 0"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_0
+2025.02.23-12:07:07.420[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_1","type":"document","description":"并发测试资源 1"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_1
+2025.02.23-12:07:07.428[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_2","type":"document","description":"并发测试资源 2"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_2
+2025.02.23-12:07:07.434[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_3","type":"document","description":"并发测试资源 3"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_3
+2025.02.23-12:07:07.442[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_4","type":"document","description":"并发测试资源 4"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_4
+2025.02.23-12:07:07.449[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_5","type":"document","description":"并发测试资源 5"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_5
+2025.02.23-12:07:07.456[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_6","type":"document","description":"并发测试资源 6"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_6
+2025.02.23-12:07:07.463[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_7","type":"document","description":"并发测试资源 7"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_7
+2025.02.23-12:07:07.470[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_8","type":"document","description":"并发测试资源 8"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_8
+2025.02.23-12:07:07.480[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_9","type":"document","description":"并发测试资源 9"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_9
+2025.02.23-12:07:07.488[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [DeployRule] using arguments [{"rule_id":"concurrent_rule001","priority":1,"effect":"ALLOW","subject_constraints":{"authorized_addresses":["test_address"],"required_roles":[]},"resource_constraints":{"resource_ids":["concurrent_resource_0","concurrent_resource_1","concurrent_resource_2","concurrent_resource_3","concurrent_resource_4","concurrent_resource_5","concurrent_resource_6","concurrent_resource_7","concurrent_resource_8","concurrent_resource_9"]},"context_constraints":{"historic_constraints":{"required_trust_score":0},"time_constraints":{"start_time":0,"end_time":1735660800},"location_constraints":{"x_coordinate":0,"y_coordinate":0,"radius":10000}},"data_operations":[0,1,2]}],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 规则冲突: 规则ID已存在
+2025.02.23-12:07:10.490[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:10.490[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:10.491[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 3 is completed
+2025.02.23-12:07:10.491[32m info [39m [caliper] [worker-message-handler] 	Worker#0 prepared for Round#3
+2025.02.23-12:07:12.404[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:12.405[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:12.405[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 3 is completed
+2025.02.23-12:07:12.405[32m info [39m [caliper] [worker-message-handler] 	Worker#4 prepared for Round#3
+2025.02.23-12:07:12.405[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:12.405[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:12.406[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 3 is completed
+2025.02.23-12:07:12.406[32m info [39m [caliper] [worker-message-handler] 	Worker#3 prepared for Round#3
+2025.02.23-12:07:12.407[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:12.407[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:12.407[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 3 is completed
+2025.02.23-12:07:12.407[32m info [39m [caliper] [worker-message-handler] 	Worker#1 prepared for Round#3
+2025.02.23-12:07:12.409[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:12.409[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:12.409[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 3 is completed
+2025.02.23-12:07:12.410[32m info [39m [caliper] [worker-message-handler] 	Worker#2 prepared for Round#3
+2025.02.23-12:07:12.410[32m info [39m [caliper] [worker-orchestrator] 	5 workers prepared, progressing to test phase.
+2025.02.23-12:07:12.410[32m info [39m [caliper] [round-orchestrator] 	Monitors successfully started
+2025.02.23-12:07:12.411[32m info [39m [caliper] [worker-message-handler] 	Worker#0 is starting Round#3
+2025.02.23-12:07:12.411[32m info [39m [caliper] [worker-message-handler] 	Worker#1 is starting Round#3
+2025.02.23-12:07:12.412[32m info [39m [caliper] [worker-message-handler] 	Worker#4 is starting Round#3
+2025.02.23-12:07:12.412[32m info [39m [caliper] [worker-message-handler] 	Worker#2 is starting Round#3
+2025.02.23-12:07:12.414[32m info [39m [caliper] [worker-message-handler] 	Worker#3 is starting Round#3
+2025.02.23-12:07:12.416[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:12.418[32m info [39m [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2025.02.23-12:07:12.423[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:12.424[32m info [39m [caliper] [caliper-worker] 	Worker #4 starting workload loop
+2025.02.23-12:07:12.422[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:12.426[32m info [39m [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2025.02.23-12:07:12.427[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:12.427[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:12.428[32m info [39m [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2025.02.23-12:07:12.432[32m info [39m [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2025.02.23-12:07:14.882[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:14.882[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:14.882[32m info [39m [caliper] [worker-message-handler] 	Worker#4 finished Round#3
+2025.02.23-12:07:14.940[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:14.941[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:14.940[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:14.941[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:14.941[32m info [39m [caliper] [worker-message-handler] 	Worker#2 finished Round#3
+2025.02.23-12:07:14.941[32m info [39m [caliper] [worker-message-handler] 	Worker#3 finished Round#3
+2025.02.23-12:07:14.943[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:14.944[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:14.944[32m info [39m [caliper] [worker-message-handler] 	Worker#1 finished Round#3
+2025.02.23-12:07:14.959[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:14.959[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:14.959[32m info [39m [caliper] [worker-message-handler] 	Worker#0 finished Round#3
+2025.02.23-12:07:19.963[32m info [39m [caliper] [default-observer] 	Resetting txCount indicator count
+2025.02.23-12:07:19.963[32m info [39m [caliper] [report-builder] 	### Test result ###
+2025.02.23-12:07:19.964[32m info [39m [caliper] [report-builder] 	
++-----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name            | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|-----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-1500 | 100  | 0    | 243.3           | 1.37            | 0.28            | 0.94            | 67.5             |
++-----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2025.02.23-12:07:19.964[32m info [39m [caliper] [round-orchestrator] 	Finished round 4 (batch-size-1500) in 1.54 seconds
+2025.02.23-12:07:19.964[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2025.02.23-12:07:19.965[32m info [39m [caliper] [report-builder] 	### All test results ###
+2025.02.23-12:07:19.966[32m info [39m [caliper] [report-builder] 	
++-----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name            | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|-----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-240  | 100  | 0    | 132.8           | 1.41            | 0.19            | 0.96            | 59.7             |
+|-----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-400  | 100  | 0    | 201.6           | 1.41            | 0.30            | 1.05            | 62.4             |
+|-----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-800  | 100  | 0    | 235.3           | 1.40            | 0.25            | 1.01            | 66.4             |
+|-----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-1500 | 100  | 0    | 243.3           | 1.37            | 0.28            | 0.94            | 67.5             |
++-----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2025.02.23-12:07:19.975[32m info [39m [caliper] [report-builder] 	Generated report with path /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/report.html
+2025.02.23-12:07:19.976[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2025.02.23-12:07:19.976[32m info [39m [caliper] [worker-orchestrator] 	Sending exit message to connected workers
+2025.02.23-12:07:19.977[32m info [39m [caliper] [worker-message-handler] 	Worker#2 is exiting
+2025.02.23-12:07:19.977[32m info [39m [caliper] [worker-message-handler] 	Worker#0 is exiting
+2025.02.23-12:07:19.977[32m info [39m [caliper] [worker-message-handler] 	Worker#3 is exiting
+2025.02.23-12:07:19.977[32m info [39m [caliper] [worker-message-handler] 	Worker#1 is exiting
+2025.02.23-12:07:19.978[32m info [39m [caliper] [worker-message-handler] 	Worker#4 is exiting
+2025.02.23-12:07:19.979[32m info [39m [caliper] [round-orchestrator] 	Benchmark finished in 66.126 seconds. Total rounds: 4. Successful rounds: 4. Failed rounds: 0.
+2025.02.23-12:07:19.979[32m info [39m [caliper] [caliper-engine] 	Skipping end command due to benchmark flow conditioning
+2025.02.23-12:07:19.979[32m info [39m [caliper] [cli-launch-manager] 	Benchmark successfully finished!
+2025.02.23-12:07:20.798[32m info [39m [caliper] [cli-launch-manager] 	Binding specification is present, performing binding for "fabric:2.5"
+2025.02.23-12:07:20.800[33m warn [39m [caliper] [bind] 	Working directory is not specified. Current path: "/home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace"
+2025.02.23-12:07:20.800[32m info [39m [caliper] [bind] 	Binding for fabric@2.5. This might take some time...
+2025.02.23-12:07:20.801[32m info [39m [caliper] [bind] 	Using working directory: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:07:20.801[32m info [39m [caliper] [bind] 	Calling npm with: install @hyperledger/fabric-gateway@1.5.0 @grpc/grpc-js@1.10.3
+
+up to date in 1s
+
+11 packages are looking for funding
+  run `npm fund` for details
+2025.02.23-12:07:22.358[32m info [39m [caliper] [cli-launch-manager] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:07:22.358[32m info [39m [caliper] [cli-launch-manager] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:07:22.358[32m info [39m [caliper] [cli-launch-manager] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:07:22.359[32m info [39m [caliper] [cli-launch-manager] 	Set SUT type: fabric
+2025.02.23-12:07:22.367[32m info [39m [caliper] [benchmark-validator] 	No observer specified, will default to `none`
+2025.02.23-12:07:22.367[32m info [39m [caliper] [caliper-engine] 	Starting benchmark flow
+2025.02.23-12:07:22.367[32m info [39m [caliper] [caliper-engine] 	Skipping start commands due to benchmark flow conditioning
+2025.02.23-12:07:22.368[32m info [39m [caliper] [caliper-engine] 	Skipping initialization phase due to benchmark flow conditioning
+2025.02.23-12:07:22.368[32m info [39m [caliper] [caliper-engine] 	Skipping install smart contract phase due to benchmark flow conditioning
+2025.02.23-12:07:22.910[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:07:22.918[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:07:22.922[32m info [39m [caliper] [monitor.js] 	Attempting to create resource monitor of type prometheus
+2025.02.23-12:07:22.923[32m info [39m [caliper] [default-observer] 	Observer interval set to 5000 milliseconds
+2025.02.23-12:07:22.926[32m info [39m [caliper] [round-orchestrator] 	Preparing worker connections
+2025.02.23-12:07:22.926[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 1 of 5
+2025.02.23-12:07:22.930[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 2 of 5
+2025.02.23-12:07:22.933[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 3 of 5
+2025.02.23-12:07:22.937[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 4 of 5
+2025.02.23-12:07:22.941[32m info [39m [caliper] [worker-orchestrator] 	Launching worker 5 of 5
+2025.02.23-12:07:22.948[32m info [39m [caliper] [worker-orchestrator] 	Messenger not configured, entering configure phase...
+2025.02.23-12:07:22.949[32m info [39m [caliper] [worker-orchestrator] 	No existing workers detected, entering worker launch phase...
+2025.02.23-12:07:22.950[32m info [39m [caliper] [worker-orchestrator] 	Waiting for 5 workers to be connected...
+2025.02.23-12:07:23.347[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:07:23.348[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:07:23.348[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:07:23.348[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:07:23.349[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:07:23.369[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:07:23.371[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:07:23.371[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:07:23.371[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:07:23.372[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:07:23.491[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:07:23.492[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:07:23.492[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:07:23.493[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:07:23.493[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:07:23.578[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:07:23.579[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:07:23.580[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:07:23.580[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:07:23.580[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:07:23.608[32m info [39m [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2025.02.23-12:07:23.609[32m info [39m [caliper] [cli-launch-worker] 	Set workspace path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace
+2025.02.23-12:07:23.610[32m info [39m [caliper] [cli-launch-worker] 	Set benchmark configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/benchmarks/batch-test-1.yaml
+2025.02.23-12:07:23.610[32m info [39m [caliper] [cli-launch-worker] 	Set network configuration path: /home/yang/yny/fabric/fabric-samples/mdhcaac-network-gateway/caliper-workspace/networks/fabric-network-domain1.yaml
+2025.02.23-12:07:23.610[32m info [39m [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2025.02.23-12:07:23.647[32m info [39m [caliper] [worker-orchestrator] 	5 workers connected, progressing to worker assignment phase.
+2025.02.23-12:07:23.647[32m info [39m [caliper] [worker-orchestrator] 	Workers currently unassigned, awaiting index assignment...
+2025.02.23-12:07:23.648[32m info [39m [caliper] [worker-orchestrator] 	Waiting for 5 workers to be assigned...
+2025.02.23-12:07:23.685[32m info [39m [caliper] [worker-orchestrator] 	5 workers assigned, progressing to worker initialization phase.
+2025.02.23-12:07:23.685[32m info [39m [caliper] [worker-orchestrator] 	Waiting for 5 workers to be ready...
+2025.02.23-12:07:23.686[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#2...
+2025.02.23-12:07:23.687[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#1...
+2025.02.23-12:07:23.687[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#4...
+2025.02.23-12:07:23.687[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#3...
+2025.02.23-12:07:23.689[32m info [39m [caliper] [worker-message-handler] 	Initializing Worker#0...
+2025.02.23-12:07:24.600[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:07:24.611[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:07:24.616[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:07:24.632[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:07:24.647[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:07:24.657[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:07:24.692[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:07:24.702[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:07:24.713[32m info [39m [caliper] [worker-message-handler] 	Worker#2 initialized
+2025.02.23-12:07:24.747[32m info [39m [caliper] [worker-message-handler] 	Worker#0 initialized
+2025.02.23-12:07:24.761[32m info [39m [caliper] [worker-message-handler] 	Worker#4 initialized
+2025.02.23-12:07:24.761[32m info [39m [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2025.02.23-12:07:24.770[32m info [39m [caliper] [IdentityManager] 	Adding admin (admin=false) as admin for organization Org1MSP
+2025.02.23-12:07:24.807[32m info [39m [caliper] [worker-message-handler] 	Worker#1 initialized
+2025.02.23-12:07:24.848[32m info [39m [caliper] [worker-message-handler] 	Worker#3 initialized
+2025.02.23-12:07:24.849[32m info [39m [caliper] [worker-orchestrator] 	5 workers ready, progressing to test preparation phase.
+2025.02.23-12:07:24.849[32m info [39m [caliper] [round-orchestrator] 	Started round 1 (batch-size-240)
+2025.02.23-12:07:24.851[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#0
+2025.02.23-12:07:24.852[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#0
+2025.02.23-12:07:24.853[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#0
+2025.02.23-12:07:24.853[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#0
+2025.02.23-12:07:24.855[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#4 for Round#0
+2025.02.23-12:07:25.180[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:25.181[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 0 is starting...
+2025.02.23-12:07:25.185[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:25.186[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 0 is starting...
+2025.02.23-12:07:25.210[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:25.211[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 0 is starting...
+2025.02.23-12:07:25.244[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:25.244[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 0 is starting...
+2025.02.23-12:07:25.260[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:25.261[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 0 is starting...
+2025.02.23-12:07:25.265[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_0","type":"document","description":"并发测试资源 0"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_0
+2025.02.23-12:07:25.279[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_1","type":"document","description":"并发测试资源 1"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_1
+2025.02.23-12:07:25.288[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_2","type":"document","description":"并发测试资源 2"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_2
+2025.02.23-12:07:25.297[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_3","type":"document","description":"并发测试资源 3"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_3
+2025.02.23-12:07:25.307[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_4","type":"document","description":"并发测试资源 4"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_4
+2025.02.23-12:07:25.316[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_5","type":"document","description":"并发测试资源 5"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_5
+2025.02.23-12:07:25.324[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_6","type":"document","description":"并发测试资源 6"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_6
+2025.02.23-12:07:25.331[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_7","type":"document","description":"并发测试资源 7"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_7
+2025.02.23-12:07:25.341[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_8","type":"document","description":"并发测试资源 8"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_8
+2025.02.23-12:07:25.350[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_9","type":"document","description":"并发测试资源 9"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_9
+2025.02.23-12:07:25.358[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [DeployRule] using arguments [{"rule_id":"concurrent_rule001","priority":1,"effect":"ALLOW","subject_constraints":{"authorized_addresses":["test_address"],"required_roles":[]},"resource_constraints":{"resource_ids":["concurrent_resource_0","concurrent_resource_1","concurrent_resource_2","concurrent_resource_3","concurrent_resource_4","concurrent_resource_5","concurrent_resource_6","concurrent_resource_7","concurrent_resource_8","concurrent_resource_9"]},"context_constraints":{"historic_constraints":{"required_trust_score":0},"time_constraints":{"start_time":0,"end_time":1735660800},"location_constraints":{"x_coordinate":0,"y_coordinate":0,"radius":10000}},"data_operations":[0,1,2]}],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 规则冲突: 规则ID已存在
+2025.02.23-12:07:28.360[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:28.361[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:28.362[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 0 is completed
+2025.02.23-12:07:28.362[32m info [39m [caliper] [worker-message-handler] 	Worker#0 prepared for Round#0
+2025.02.23-12:07:30.188[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:30.188[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:30.189[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 0 is completed
+2025.02.23-12:07:30.189[32m info [39m [caliper] [worker-message-handler] 	Worker#3 prepared for Round#0
+2025.02.23-12:07:30.218[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:30.218[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:30.219[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 0 is completed
+2025.02.23-12:07:30.219[32m info [39m [caliper] [worker-message-handler] 	Worker#4 prepared for Round#0
+2025.02.23-12:07:30.249[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:30.249[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:30.250[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 0 is completed
+2025.02.23-12:07:30.251[32m info [39m [caliper] [worker-message-handler] 	Worker#1 prepared for Round#0
+2025.02.23-12:07:30.267[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:30.267[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:30.268[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 0 is completed
+2025.02.23-12:07:30.268[32m info [39m [caliper] [worker-message-handler] 	Worker#2 prepared for Round#0
+2025.02.23-12:07:30.269[32m info [39m [caliper] [worker-orchestrator] 	5 workers prepared, progressing to test phase.
+2025.02.23-12:07:30.269[32m info [39m [caliper] [round-orchestrator] 	Monitors successfully started
+2025.02.23-12:07:30.271[32m info [39m [caliper] [worker-message-handler] 	Worker#0 is starting Round#0
+2025.02.23-12:07:30.271[32m info [39m [caliper] [worker-message-handler] 	Worker#1 is starting Round#0
+2025.02.23-12:07:30.273[32m info [39m [caliper] [worker-message-handler] 	Worker#3 is starting Round#0
+2025.02.23-12:07:30.273[32m info [39m [caliper] [worker-message-handler] 	Worker#2 is starting Round#0
+2025.02.23-12:07:30.274[32m info [39m [caliper] [worker-message-handler] 	Worker#4 is starting Round#0
+2025.02.23-12:07:30.281[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:30.281[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:30.282[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:30.285[32m info [39m [caliper] [caliper-worker] 	Worker #4 starting workload loop
+2025.02.23-12:07:30.286[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:30.286[32m info [39m [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2025.02.23-12:07:30.286[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:30.287[32m info [39m [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2025.02.23-12:07:30.289[32m info [39m [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2025.02.23-12:07:30.293[32m info [39m [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2025.02.23-12:07:32.810[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:32.810[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:32.811[32m info [39m [caliper] [worker-message-handler] 	Worker#3 finished Round#0
+2025.02.23-12:07:32.930[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:32.930[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:32.931[32m info [39m [caliper] [worker-message-handler] 	Worker#0 finished Round#0
+2025.02.23-12:07:32.967[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:32.967[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:32.969[32m info [39m [caliper] [worker-message-handler] 	Worker#1 finished Round#0
+2025.02.23-12:07:33.066[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:33.066[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:33.067[32m info [39m [caliper] [worker-message-handler] 	Worker#2 finished Round#0
+2025.02.23-12:07:33.098[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:33.098[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:33.099[32m info [39m [caliper] [worker-message-handler] 	Worker#4 finished Round#0
+2025.02.23-12:07:38.117[32m info [39m [caliper] [default-observer] 	Resetting txCount indicator count
+2025.02.23-12:07:38.118[32m info [39m [caliper] [report-builder] 	### Test result ###
+2025.02.23-12:07:38.123[32m info [39m [caliper] [report-builder] 	
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name           | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-240 | 100  | 0    | 126.3           | 1.33            | 0.15            | 1.01            | 58.4             |
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2025.02.23-12:07:38.124[32m info [39m [caliper] [round-orchestrator] 	Finished round 1 (batch-size-240) in 1.812 seconds
+2025.02.23-12:07:38.124[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2025.02.23-12:07:38.125[32m info [39m [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2025.02.23-12:07:43.129[32m info [39m [caliper] [round-orchestrator] 	Started round 2 (batch-size-400)
+2025.02.23-12:07:43.131[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#1
+2025.02.23-12:07:43.132[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#1
+2025.02.23-12:07:43.134[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#4 for Round#1
+2025.02.23-12:07:43.134[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#1
+2025.02.23-12:07:43.135[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#1
+2025.02.23-12:07:43.138[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:43.138[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 1 is starting...
+2025.02.23-12:07:43.140[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:43.141[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 1 is starting...
+2025.02.23-12:07:43.141[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:43.141[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 1 is starting...
+2025.02.23-12:07:43.143[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:43.144[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 1 is starting...
+2025.02.23-12:07:43.144[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:43.144[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 1 is starting...
+2025.02.23-12:07:43.159[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_0","type":"document","description":"并发测试资源 0"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_0
+2025.02.23-12:07:43.168[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_1","type":"document","description":"并发测试资源 1"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_1
+2025.02.23-12:07:43.175[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_2","type":"document","description":"并发测试资源 2"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_2
+2025.02.23-12:07:43.183[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_3","type":"document","description":"并发测试资源 3"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_3
+2025.02.23-12:07:43.190[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_4","type":"document","description":"并发测试资源 4"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_4
+2025.02.23-12:07:43.196[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_5","type":"document","description":"并发测试资源 5"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_5
+2025.02.23-12:07:43.202[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_6","type":"document","description":"并发测试资源 6"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_6
+2025.02.23-12:07:43.209[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_7","type":"document","description":"并发测试资源 7"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_7
+2025.02.23-12:07:43.216[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_8","type":"document","description":"并发测试资源 8"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_8
+2025.02.23-12:07:43.222[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_9","type":"document","description":"并发测试资源 9"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_9
+2025.02.23-12:07:43.231[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [DeployRule] using arguments [{"rule_id":"concurrent_rule001","priority":1,"effect":"ALLOW","subject_constraints":{"authorized_addresses":["test_address"],"required_roles":[]},"resource_constraints":{"resource_ids":["concurrent_resource_0","concurrent_resource_1","concurrent_resource_2","concurrent_resource_3","concurrent_resource_4","concurrent_resource_5","concurrent_resource_6","concurrent_resource_7","concurrent_resource_8","concurrent_resource_9"]},"context_constraints":{"historic_constraints":{"required_trust_score":0},"time_constraints":{"start_time":0,"end_time":1735660800},"location_constraints":{"x_coordinate":0,"y_coordinate":0,"radius":10000}},"data_operations":[0,1,2]}],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 规则冲突: 规则ID已存在
+2025.02.23-12:07:46.233[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:46.233[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:46.234[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 1 is completed
+2025.02.23-12:07:46.234[32m info [39m [caliper] [worker-message-handler] 	Worker#0 prepared for Round#1
+2025.02.23-12:07:48.141[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:48.141[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:48.142[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 1 is completed
+2025.02.23-12:07:48.142[32m info [39m [caliper] [worker-message-handler] 	Worker#3 prepared for Round#1
+2025.02.23-12:07:48.142[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:48.142[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:48.143[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 1 is completed
+2025.02.23-12:07:48.143[32m info [39m [caliper] [worker-message-handler] 	Worker#4 prepared for Round#1
+2025.02.23-12:07:48.143[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:48.143[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:48.143[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 1 is completed
+2025.02.23-12:07:48.144[32m info [39m [caliper] [worker-message-handler] 	Worker#2 prepared for Round#1
+2025.02.23-12:07:48.145[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:48.145[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:48.146[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 1 is completed
+2025.02.23-12:07:48.146[32m info [39m [caliper] [worker-message-handler] 	Worker#1 prepared for Round#1
+2025.02.23-12:07:48.146[32m info [39m [caliper] [worker-orchestrator] 	5 workers prepared, progressing to test phase.
+2025.02.23-12:07:48.146[32m info [39m [caliper] [round-orchestrator] 	Monitors successfully started
+2025.02.23-12:07:48.147[32m info [39m [caliper] [worker-message-handler] 	Worker#0 is starting Round#1
+2025.02.23-12:07:48.147[32m info [39m [caliper] [worker-message-handler] 	Worker#1 is starting Round#1
+2025.02.23-12:07:48.148[32m info [39m [caliper] [worker-message-handler] 	Worker#3 is starting Round#1
+2025.02.23-12:07:48.148[32m info [39m [caliper] [worker-message-handler] 	Worker#2 is starting Round#1
+2025.02.23-12:07:48.149[32m info [39m [caliper] [worker-message-handler] 	Worker#4 is starting Round#1
+2025.02.23-12:07:48.152[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:48.153[32m info [39m [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2025.02.23-12:07:48.156[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:48.156[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:48.157[32m info [39m [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2025.02.23-12:07:48.157[32m info [39m [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2025.02.23-12:07:48.161[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:48.162[32m info [39m [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2025.02.23-12:07:48.164[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:07:48.165[32m info [39m [caliper] [caliper-worker] 	Worker #4 starting workload loop
+2025.02.23-12:07:50.649[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:50.650[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:50.650[32m info [39m [caliper] [worker-message-handler] 	Worker#4 finished Round#1
+2025.02.23-12:07:50.665[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:50.665[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:50.665[32m info [39m [caliper] [worker-message-handler] 	Worker#2 finished Round#1
+2025.02.23-12:07:50.704[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:50.704[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:50.705[32m info [39m [caliper] [worker-message-handler] 	Worker#3 finished Round#1
+2025.02.23-12:07:50.724[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:50.724[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:50.725[32m info [39m [caliper] [worker-message-handler] 	Worker#1 finished Round#1
+2025.02.23-12:07:50.743[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user admin
+2025.02.23-12:07:50.743[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2025.02.23-12:07:50.743[32m info [39m [caliper] [worker-message-handler] 	Worker#0 finished Round#1
+2025.02.23-12:07:55.746[32m info [39m [caliper] [default-observer] 	Resetting txCount indicator count
+2025.02.23-12:07:55.747[32m info [39m [caliper] [report-builder] 	### Test result ###
+2025.02.23-12:07:55.749[32m info [39m [caliper] [report-builder] 	
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name           | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| batch-size-400 | 100  | 0    | 153.1           | 1.43            | 0.19            | 0.94            | 65.0             |
++----------------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2025.02.23-12:07:55.749[32m info [39m [caliper] [round-orchestrator] 	Finished round 2 (batch-size-400) in 1.589 seconds
+2025.02.23-12:07:55.749[32m info [39m [caliper] [monitor.js] 	Stopping all monitors
+2025.02.23-12:07:55.749[32m info [39m [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2025.02.23-12:08:00.755[32m info [39m [caliper] [round-orchestrator] 	Started round 3 (batch-size-800)
+2025.02.23-12:08:00.757[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#2
+2025.02.23-12:08:00.760[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#2
+2025.02.23-12:08:00.765[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#2
+2025.02.23-12:08:00.769[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#4 for Round#2
+2025.02.23-12:08:00.773[32m info [39m [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#2
+2025.02.23-12:08:00.778[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:08:00.781[32m info [39m [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 2 is starting...
+2025.02.23-12:08:00.782[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:08:00.783[32m info [39m [caliper] [caliper-worker] 	Info: worker 4 prepare test phase for round 2 is starting...
+2025.02.23-12:08:00.787[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:08:00.787[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:08:00.788[32m info [39m [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 2 is starting...
+2025.02.23-12:08:00.788[32m info [39m [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 2 is starting...
+2025.02.23-12:08:00.789[32m info [39m [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user admin
+2025.02.23-12:08:00.789[32m info [39m [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 2 is starting...
+2025.02.23-12:08:00.802[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_0","type":"document","description":"并发测试资源 0"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_0
+2025.02.23-12:08:00.808[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_1","type":"document","description":"并发测试资源 1"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_1
+2025.02.23-12:08:00.816[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_2","type":"document","description":"并发测试资源 2"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_2
+2025.02.23-12:08:00.825[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_3","type":"document","description":"并发测试资源 3"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_3
+2025.02.23-12:08:00.832[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_4","type":"document","description":"并发测试资源 4"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_4
+2025.02.23-12:08:00.839[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_5","type":"document","description":"并发测试资源 5"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_5
+2025.02.23-12:08:00.845[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_6","type":"document","description":"并发测试资源 6"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_6
+2025.02.23-12:08:00.851[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_7","type":"document","description":"并发测试资源 7"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_7
+2025.02.23-12:08:00.856[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_8","type":"document","description":"并发测试资源 8"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_8
+2025.02.23-12:08:00.862[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [RegisterResource] using arguments [{"id":"concurrent_resource_9","type":"document","description":"并发测试资源 9"},],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 资源已存在: concurrent_resource_9
+2025.02.23-12:08:00.871[31m error[39m [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [DeployRule] using arguments [{"rule_id":"concurrent_rule001","priority":1,"effect":"ALLOW","subject_constraints":{"authorized_addresses":["test_address"],"required_roles":[]},"resource_constraints":{"resource_ids":["concurrent_resource_0","concurrent_resource_1","concurrent_resource_2","concurrent_resource_3","concurrent_resource_4","concurrent_resource_5","concurrent_resource_6","concurrent_resource_7","concurrent_resource_8","concurrent_resource_9"]},"context_constraints":{"historic_constraints":{"required_trust_score":0},"time_constraints":{"start_time":0,"end_time":1735660800},"location_constraints":{"x_coordinate":0,"y_coordinate":0,"radius":10000}},"data_operations":[0,1,2]}],  with error: EndorseError: 10 ABORTED: failed to endorse transaction, see attached details for more info
+Details:
+-  peer0.org1.example.com:7051:chaincode response 500, 规则冲突: 规则ID已存在
+2025.02.23-12:08:03.655[32m info [39m [caliper] [cli-launch-manager] 	Request to terminate received, stopping workers
+2025.02.23-12:08:03.656[32m info [39m [caliper] [cli-launch-manager] 	Workers terminated

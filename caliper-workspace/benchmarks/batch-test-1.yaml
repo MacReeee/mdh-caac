@@ -1,0 +1,680 @@
+test:
+  name: Batch Request Test
+  description: Test performance with different batch sizes
+  workers:
+    type: local
+    number: 5
+  rounds:
+    - label: batch-size-4
+      description: 4 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 4
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 4
+    - label: batch-size-8
+      description: 8 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 8
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 8
+    - label: batch-size-12
+      description: 12 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 12
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 12
+    - label: batch-size-16
+      description: 16 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 16
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 16
+    - label: batch-size-20
+      description: 20 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 20
+    - label: batch-size-24
+      description: 24 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 24
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 24
+    - label: batch-size-28
+      description: 28 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 28
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 28
+    - label: batch-size-32
+      description: 32 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 32
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 32
+    - label: batch-size-36
+      description: 36 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 36
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 36
+    - label: batch-size-40
+      description: 40 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 40
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 40
+    - label: batch-size-44
+      description: 44 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 44
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 44
+    - label: batch-size-48
+      description: 48 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 48
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 48
+    - label: batch-size-52
+      description: 52 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 52
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 52
+    - label: batch-size-56
+      description: 56 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 56
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 56
+    - label: batch-size-60
+      description: 60 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 60
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 60
+    - label: batch-size-64
+      description: 64 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 64
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 64
+    - label: batch-size-68
+      description: 68 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 68
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 68
+    - label: batch-size-72
+      description: 72 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 72
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 72
+    - label: batch-size-76
+      description: 76 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 76
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 76
+    - label: batch-size-80
+      description: 80 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 80
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 80
+    - label: batch-size-84
+      description: 84 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 84
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 84
+    - label: batch-size-88
+      description: 88 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 88
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 88
+    - label: batch-size-92
+      description: 92 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 92
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 92
+    - label: batch-size-96
+      description: 96 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 96
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 96
+    - label: batch-size-100
+      description: 100 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 100
+    - label: batch-size-104
+      description: 104 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 104
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 104
+    - label: batch-size-108
+      description: 108 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 108
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 108
+    - label: batch-size-112
+      description: 112 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 112
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 112
+    - label: batch-size-116
+      description: 116 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 116
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 116
+    - label: batch-size-120
+      description: 120 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 120
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 120
+    - label: batch-size-124
+      description: 124 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 124
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 124
+    - label: batch-size-128
+      description: 128 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 128
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 128
+    - label: batch-size-132
+      description: 132 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 132
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 132
+    - label: batch-size-136
+      description: 136 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 136
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 136
+    - label: batch-size-140
+      description: 140 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 140
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 140
+    - label: batch-size-144
+      description: 144 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 144
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 144
+    - label: batch-size-148
+      description: 148 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 148
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 148
+    - label: batch-size-152
+      description: 152 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 152
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 152
+    - label: batch-size-156
+      description: 156 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 156
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 156
+    - label: batch-size-160
+      description: 160 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 160
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 160
+    - label: batch-size-164
+      description: 164 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 164
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 164
+    - label: batch-size-168
+      description: 168 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 168
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 168
+    - label: batch-size-172
+      description: 172 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 172
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 172
+    - label: batch-size-176
+      description: 176 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 176
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 176
+    - label: batch-size-180
+      description: 180 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 180
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 180
+    - label: batch-size-184
+      description: 184 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 184
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 184
+    - label: batch-size-188
+      description: 188 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 188
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 188
+    - label: batch-size-192
+      description: 192 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 192
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 192
+    - label: batch-size-196
+      description: 196 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 196
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 196
+    - label: batch-size-200
+      description: 200 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 200
+    - label: batch-size-204
+      description: 204 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 204
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 204
+    - label: batch-size-208
+      description: 208 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 208
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 208
+    - label: batch-size-212
+      description: 212 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 212
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 212
+    - label: batch-size-216
+      description: 216 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 216
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 216
+    - label: batch-size-220
+      description: 220 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 220
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 220
+    - label: batch-size-224
+      description: 224 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 224
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 224
+    - label: batch-size-228
+      description: 228 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 228
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 228
+    - label: batch-size-232
+      description: 232 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 232
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 232
+    - label: batch-size-236
+      description: 236 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 236
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 236
+    - label: batch-size-240
+      description: 240 requests per transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 240
+      workload:
+        module: workload/batch-request.js
+        arguments:
+          batchSize: 240
+
+monitors:
+  resource:
+  - module: prometheus
+    options:
+      url: "http://localhost:9090"
+      metrics:
+        include: [dev-.*, couch, peer, orderer]
+        queries: []
+  transaction:
+  - module: prometheus
+    options:
+      url: "http://localhost:9090"
